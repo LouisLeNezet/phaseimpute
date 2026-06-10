@@ -28,10 +28,13 @@ workflow BAM_IMPUTE_QUILT {
         .map { metaI, bam, bai, bampath, bamname, metaPC, hap, legend, posfile, gmap, chr, start, end ->
             def regionout = "${chr}"
             if (start != [] && end != []) {
+                def paddedStart = String.format('%010d', start as long)
+                def paddedEnd = String.format('%010d', end as long)
+                regionoutPadded = "${chr}:${paddedStart}-${paddedEnd}"
                 regionout = "${chr}:${start}-${end}"
             }
             [
-                metaPC + metaI + ["regionout": regionout],
+                metaPC + metaI + ["regionout": regionout, "regionoutPadded": regionoutPadded],
                 bam,
                 bai,
                 bampath,
@@ -56,7 +59,7 @@ workflow BAM_IMPUTE_QUILT {
     ligate_input = QUILT_QUILT.out.vcf
         .join(QUILT_QUILT.out.tbi)
         .map { meta, vcf, index ->
-            def keysToKeep = meta.keySet() - ['regionout']
+            def keysToKeep = meta.keySet() - ['regionout', 'regionoutPadded']
             [meta.subMap(keysToKeep), vcf, index]
         }
         .groupTuple()

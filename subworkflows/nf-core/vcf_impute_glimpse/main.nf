@@ -43,12 +43,21 @@ workflow VCF_IMPUTE_GLIMPSE {
 
     phase_input = ch_vcf
         .combine(ch_chunks_panel_map)
-        .map{ metaI, vcf, csi, sample, metaPC, regionin, regionout, ref, ref_index, _region, map -> [
-            metaI + metaPC + ["regionout": regionout],
-            vcf, csi, sample, // target input
-            regionin, regionout, // chunks
-            ref, ref_index, map // reference panel
-        ]}
+        .map{ metaI, vcf, csi, sample, metaPC, regionin, regionout, ref, ref_index, _region, map ->
+            def chr = regionout.tokenize(':')[0]
+            def region = regionout.tokenize(':')[1]
+            def start = region.tokenize('-')[0]
+            def end = region.tokenize('-')[1]
+            def paddedStart = String.format('%010d', start as long)
+            def paddedEnd = String.format('%010d', end as long)
+            regionoutPadded = "${chr}:${paddedStart}-${paddedEnd}"
+            [
+                metaI + metaPC + ["regionout": regionout, "regionoutPadded": regionoutPadded],
+                vcf, csi, sample, // target input
+                regionin, regionout, // chunks
+                ref, ref_index, map // reference panel
+            ]
+        }
 
     GLIMPSE_PHASE(phase_input)
 
@@ -62,8 +71,8 @@ workflow VCF_IMPUTE_GLIMPSE {
             failOnDuplicate: true,
         )
         .map { meta, vcf, index ->
-            def keysToKeep = meta.keySet() - 'regionout'
-            [meta.subMap(keysToKeep), vcf, index]
+            def keysToKeep = meta.keySet() - ['regionout', 'regionoutPadded']
+            [ meta.subMap(keysToKeep), vcf, index ]
         }
         .groupTuple()
 

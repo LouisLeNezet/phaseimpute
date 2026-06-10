@@ -10,14 +10,11 @@
 
 include { UTILS_NFSCHEMA_PLUGIN     } from '../../nf-core/utils_nfschema_plugin'
 include { samplesheetToList         } from 'plugin/nf-schema'
-include { paramsHelp                } from 'plugin/nf-schema'
 include { completionEmail           } from '../../nf-core/utils_nfcore_pipeline'
 include { completionSummary         } from '../../nf-core/utils_nfcore_pipeline'
-include { imNotification            } from '../../nf-core/utils_nfcore_pipeline'
 include { paramsSummaryMap          } from 'plugin/nf-schema'
 include { UTILS_NFCORE_PIPELINE     } from '../../nf-core/utils_nfcore_pipeline'
 include { UTILS_NEXTFLOW_PIPELINE   } from '../../nf-core/utils_nextflow_pipeline'
-include { SAMTOOLS_FAIDX            } from '../../../modules/nf-core/samtools/faidx'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +27,7 @@ workflow PIPELINE_INITIALISATION {
     take:
     version           // boolean: Display version and exit
     validate_params   // boolean: Boolean whether to validate parameters against the schema at runtime
-    _monochrome_logs  // boolean: Do not use coloured log outputs
+    monochrome_logs   // boolean: Do not use coloured log outputs
     nextflow_cli_args //   array: List of positional nextflow CLI args
     outdir            //  string: The output directory where the results will be saved
     help              // boolean: Display help message and exit
@@ -61,7 +58,9 @@ workflow PIPELINE_INITIALISATION {
     //
     // Validate parameters and generate parameter summary to stdout
     //
-    before_text = """
+
+    def after_text = ""
+    def before_text = """
 -\033[2m----------------------------------------------------\033[0m-
                                         \033[0;32m,--.\033[0;30m/\033[0;32m,-.\033[0m
 \033[0;34m        ___     __   __   __   ___     \033[0;32m/,-._.--~\'\033[0m
@@ -78,6 +77,10 @@ workflow PIPELINE_INITIALISATION {
 * Software dependencies
     https://github.com/nf-core/phaseimpute/blob/main/CITATIONS.md
 """
+    if (monochrome_logs) {
+        before_text = before_text.replaceAll(/\033\[[0-9;]*m/, '')
+    }
+
     command = "nextflow run ${workflow.manifest.name} -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
 
     UTILS_NFSCHEMA_PLUGIN (
@@ -188,7 +191,7 @@ workflow PIPELINE_INITIALISATION {
     //
     if (sheet_region == null){
         // #TODO Add support for string input
-        ch_regions  = getRegionFromFai("all", ch_ref_gen)
+        ch_regions = getRegionFromFai("all", ch_ref_gen)
     }  else  if (sheet_region.endsWith(".csv")) {
         log.info "Region file provided as input is a samplesheet"
         ch_regions = channel.from(samplesheetToList(
@@ -297,77 +300,79 @@ workflow PIPELINE_INITIALISATION {
     //
     // Check panel, chunks and posfile have same panel id
     //
-    panel_panelid   = ch_panel.map{ metaPC, _vcf, _index -> [metaPC.panel_id]}.unique()
+    panel_panelid = ch_panel.map{ metaPC, _vcf, _index -> [metaPC.panel_id] }.unique()
     chunks_panelid  = ch_chunks.map{ metaPC, _chunks -> [metaPC.panel_id]}.unique()
     posfile_panelid = ch_posfile.map{ metaPC, _vcf, _index, _hap, _legend, _posfile -> [metaPC.panel_id]}.unique()
 
     // Get all unique panel id except None
-    panel_id = panel_panelid
+    panel_id_list = panel_panelid
         .mix(chunks_panelid, posfile_panelid)
         .flatten()
         .filter { it -> it != "None" }
         .unique()
+        .toList()
 
     // Check uniqueness of panel_id
     // TODO add support for multiple panel
-    panel_id
-        .collect()
-        .map{ panel_ids ->
-            if (panel_ids.size() != 1) {
-                error "Multiple panel IDs detected: ${panel_ids}. Please provide only one across panel, chunks and posfile."
-            }
+    panel_id_list.map{ panel_ids ->
+        if (panel_ids.size() > 1) {
+            error "Multiple panel IDs detected: ${panel_ids}."
         }
+    }
+
+    panel_id_list = panel_id_list
+        .map{ ids -> ids.size() > 0 ? ids[0] : "None" }
 
     // For each channel if not provided change panel_id to available ones
     if (!sheet_panel) {
-        ch_panel = ch_panel
-            .combine(panel_id)
+        ch_panel_ready = ch_panel
+            .combine(panel_id_list)
             .map{ metaPC, vcf, index, panel_id_name -> [
                 metaPC + ['panel_id': panel_id_name], vcf, index
             ]}
+    } else {
+        ch_panel_ready = ch_panel
     }
 
-    if (!sheet_chunks) {
-        ch_chunks = ch_chunks
-            .combine(panel_id)
-            .map{ metaPC, chunks, panel_id_name -> [
-                metaPC + ['panel_id': panel_id_name], chunks
-            ]}
-    }
-
-    if (!sheet_posfile) {
-        ch_posfile = ch_posfile
-            .combine(panel_id)
-            .map{ metaPC, vcf, index, hap, legend, posfile, panel_id_name -> [
-                metaPC + ['panel_id': panel_id_name], vcf, index, hap, legend, posfile
-            ]}
+    def (ch_panel_for_id, ch_panel_for_use) = ch_panel_ready.multiMap { it ->
+        for_id: it
+        for_use: it
     }
 
     //
     // Check contigs name in different meta map
     //
     // Collect all chromosomes names in all different inputs
-    chr_ref = ch_ref_gen.map { _meta, _fasta, fai_file, _gzi_file -> [fai_file.readLines()*.split('\t').collect{cols -> cols[0]}] }
+    chr_ref = ch_ref_gen.map {
+        _meta, _fasta, fai_file, _gzi_file -> [
+            fai_file.readLines()*.split('\t').collect{cols -> cols[0]}
+        ]
+    }
     chr_regions = extractChr(ch_regions)
 
     // Check that the chromosomes names that will be used are all present in different inputs
     chr_ref_mis     = checkMetaChr(chr_regions, chr_ref, "reference genome", max_chr_names)
     chr_chunks_mis  = checkMetaChr(chr_regions, extractChr(ch_chunks), "chromosome chunks", max_chr_names)
     chr_map_mis     = checkMetaChr(chr_regions, extractChr(ch_map), "genetic map", max_chr_names)
-    chr_panel_mis   = checkMetaChr(chr_regions, extractChr(ch_panel), "reference panel", max_chr_names)
+    chr_panel_mis   = checkMetaChr(chr_regions, extractChr(ch_panel_for_id), "reference panel", max_chr_names)
     chr_posfile_mis = checkMetaChr(chr_regions, extractChr(ch_posfile), "position", max_chr_names)
 
     // Compute the intersection of all chromosomes names
-    chr_all_mis = chr_ref_mis.concat(chr_chunks_mis, chr_map_mis, chr_panel_mis, chr_posfile_mis)
+    chr_all_mis_ch = chr_ref_mis.concat(chr_chunks_mis, chr_map_mis, chr_panel_mis, chr_posfile_mis)
         .unique()
-        .toList()
-        .subscribe{ chr ->
-            if (chr.size() > 0) {
-                def chr_names = chr.size() > max_chr_names ? chr[0..max_chr_names - 1] + ['...'] : chr
-                log.warn "The following contigs are absent from at least one file : ${chr_names} and therefore won't be used" } }
+    chr_all_mis = chr_all_mis_ch.toList()
+
+    chr_all_mis_for_combine = chr_all_mis.map { chr -> [chr] }
+
+    chr_all_mis.subscribe{ chr ->
+        if (chr.size() > 0) {
+            def chr_names = chr.size() > max_chr_names ? chr[0..max_chr_names - 1] + ['...'] : chr
+            log.warn "The following contigs are absent from at least one file : ${chr_names} and therefore won't be used"
+        }
+    }
 
     ch_regions = ch_regions
-        .combine(chr_all_mis.toList())
+        .combine(chr_all_mis_for_combine)
         .filter { meta, _regions, chr_mis ->
             !(meta.chr in chr_mis)
         }
@@ -380,7 +385,8 @@ workflow PIPELINE_INITIALISATION {
         .subscribe { region -> log.info "The following contigs will be processed: ${region}" }
 
     // Remove other contigs from panel and posfile files
-    ch_panel = ch_panel
+    ch_panel_for_use = ch_panel_for_use
+        .view()
         .combine(ch_regions.collect{ metaCR, _region -> metaCR.chr }.toList())
         .filter { meta, _vcf, _index, chrs ->
             meta.chr in chrs
@@ -400,7 +406,7 @@ workflow PIPELINE_INITIALISATION {
 
     // Combine map and panel for joint operations
     ch_map = ch_map
-        .combine(ch_panel.map{ metaPC, _vcf, _index -> [
+        .combine(ch_panel_for_use.map{ metaPC, _vcf, _index -> [
             metaPC.subMap("chr"), metaPC
         ]}, by: 0)
         .map{ _metaC, map, metaPC -> [
@@ -408,23 +414,23 @@ workflow PIPELINE_INITIALISATION {
         ]}
 
     // Check that all input files have the correct index
-    checkFileIndex(ch_input_target.mix(ch_input_truth, ch_ref_gen, ch_panel))
+    checkFileIndex(ch_input_target.mix(ch_input_truth, ch_ref_gen, ch_panel_for_use))
 
-    // Make available both index
+    // Make available both index if present
     ch_fasta_index = ch_ref_gen.map{ meta, fasta, fai, gzi -> [
-        meta, fasta, [fai, gzi]
+        meta, fasta, gzi ? [fai, gzi] : [fai]
     ]}
 
     emit:
-    ch_input_target  // [ [meta], file, index ]
-    ch_input_truth   // [ [meta], file, index ]
-    ch_fasta_index   // [ [genome], fasta, [fai, gzi] ]
-    ch_panel         // [ [panel_id, chr], vcf, index ]
-    ch_depth         // [ [depth], depth ]
-    ch_regions       // [ [chr, region], region ]
-    ch_map           // [ [chr], map ]
-    ch_posfile       // [ [panel_id, chr], vcf, index, hap, legend, posfile ]
-    ch_chunks        // [ [panel_id, chr], txt ]
+    ch_input_target = ch_input_target // [ [meta], file, index ]
+    ch_input_truth  = ch_input_truth  // [ [meta], file, index ]
+    ch_fasta_index  = ch_fasta_index  // [ [genome], fasta, [fai, gzi] ]
+    ch_panel        = ch_panel_for_use  // [ [panel_id, chr], vcf, index ]
+    ch_depth        = ch_depth        // [ [depth], depth ]
+    ch_regions      = ch_regions      // [ [chr, region], region ]
+    ch_map          = ch_map          // [ [chr], map ]
+    ch_posfile      = ch_posfile      // [ [panel_id, chr], vcf, index, hap, legend, posfile ]
+    ch_chunks       = ch_chunks       // [ [panel_id, chr], txt ]
 }
 
 /*
@@ -442,7 +448,6 @@ workflow PIPELINE_COMPLETION {
 
     outdir          //    path: Path to output directory where results will be published
     monochrome_logs // boolean: Disable ANSI colour codes in log output
-    hook_url        //  string: hook URL for notifications
     multiqc_report  //  string: Path to MultiQC report
 
     main:
@@ -466,13 +471,11 @@ workflow PIPELINE_COMPLETION {
         }
 
         completionSummary(monochrome_logs)
-        if (hook_url) {
-            imNotification(summary_params, hook_url)
-        }
+
     }
 
     workflow.onError {
-        log.error "Pipeline failed. Please refer to troubleshooting docs: https://nf-co.re/docs/usage/troubleshooting"
+        log.error "Pipeline failed. Please refer to troubleshooting docs for common issues: https://nf-co.re/docs/running/troubleshooting"
     }
 }
 
@@ -517,16 +520,16 @@ def validateInputParameters(
 
     // Check that posfile and panel are provided when running impute only
     if (steps.contains("impute") && !steps.find { step -> step in ["all", "panelprep"] }) {
-        // Required by all tools except glimpse2, beagle5, minimac4
-        if (!tools.find { tool -> tool in ["glimpse2", "beagle5", "minimac4"] }) {
+        // Required by all tools except glimpse2, quilt2, beagle5, minimac4
+        if (!tools.find { tool -> tool in ["glimpse2", "quilt2", "beagle5", "minimac4"] }) {
             if (!sheet_posfile) {
                 error "No --posfile provided for --steps impute"
             }
         }
-        // Required by glimpse1 and glimpse2 only
-        if (tools.find { tool -> tool in ["glimpse1", "glimpse2"] }) {
+        // Required by panel-backed imputation tools
+        if (tools.find { tool -> tool in ["glimpse1", "glimpse2", "quilt2"] }) {
             if (!sheet_panel) {
-                error "No --panel provided for imputation with GLIMPSE1 or GLIMPSE2"
+                error "No --panel provided for imputation with GLIMPSE1, GLIMPSE2 or QUILT2"
             }
         }
     }
@@ -574,8 +577,8 @@ def validateInputBatchTools(ch_input, batch_size, extension, tools) {
         .count()
         .map{ nb_input ->
             if (extension ==~ "(vcf|bcf)(.gz)?") {
-                if (tools.contains("stitch") || tools.contains("quilt")) {
-                    error "Stitch or Quilt software cannot run with VCF or BCF files. Please provide alignment files (i.e. BAM or CRAM)."
+                if (tools.contains("stitch") || tools.contains("quilt") || tools.contains("quilt2")) {
+                    error "Stitch, QUILT and QUILT2 software cannot run with VCF or BCF files. Please provide alignment files (i.e. BAM or CRAM)."
                 }
                 if (nb_input > 1) {
                     error "When using a Variant Calling Format file as input, only one file can be provided. If you have multiple single-sample VCF files, please merge them into a single multisample VCF file."
@@ -589,8 +592,8 @@ def validateInputBatchTools(ch_input, batch_size, extension, tools) {
             }
 
             if (nb_input > batch_size) {
-                if (tools.contains("glimpse2") || tools.contains("quilt")) {
-                    log.warn("Glimpse2 or Quilt software is selected and the number of input files (${nb_input}) is less than the batch size (${batch_size}). The input files will be processed in ${Math.ceil(nb_input / batch_size) as int} batches.")
+                if (tools.contains("glimpse2") || tools.contains("quilt") || tools.contains("quilt2")) {
+                    log.warn("Glimpse2, QUILT or QUILT2 software is selected and the number of input files (${nb_input}) is less than the batch size (${batch_size}). The input files will be processed in ${Math.ceil(nb_input / batch_size) as int} batches.")
                 }
                 if (tools.contains("stitch") || tools.contains("glimpse1")) {
                     error "Stitch or Glimpse1 software is selected and the number of input files (${nb_input}) is less than the batch size (${batch_size}). Splitting the input files in batches would induce batch effect."
@@ -826,6 +829,7 @@ def toolCitationText(steps, tools, normalize, remove_samples, compute_freq, phas
         MINIMAC4: "Minimac4 (Das et al. 2016)",
         STITCH  : "STITCH (Davies et al. 2016)",
         QUILT   : "QUILT (Davies et al. 2021)",
+        QUILT2  : "QUILT2 (Li et al. 2026)",
         MULTIQC : "MultiQC (Ewels et al. 2016)",
         VCFLIB  : "vcflib (Garrison et al. 2022)",
         SHAPEIT5: "SHAPEIT5 (Hofmeister et al. 2023)",
@@ -845,9 +849,9 @@ def toolCitationText(steps, tools, normalize, remove_samples, compute_freq, phas
 
     def text_panelprep = [
         "Reference panel preparation followed several steps.",
-        normalize && remove_samples ? "The reference panel genotypes were normalized and samples" + remove_samples + "were removed" :
+        normalize && remove_samples ? "The reference panel genotypes were normalized and samples: " + remove_samples.split(",").join(", ") + " were removed" :
             normalize ? "The reference panel genotypes were normalized" :
-                remove_samples ? "Samples " + remove_samples.split(",").join(", ") + " were removed from the reference panel genotypes" :
+                remove_samples ? "Samples: " + remove_samples.split(",").join(", ") + " were removed from the reference panel genotypes" :
                     "No normalization or sample removal were performed on the reference panel genotypes.",
         normalize || remove_samples ? "followed by site extraction and format conversion using ${tool_citation.BCFTOOLS}.":
             "Site extraction and format conversion was done using ${tool_citation.BCFTOOLS}.",
@@ -866,6 +870,7 @@ def toolCitationText(steps, tools, normalize, remove_samples, compute_freq, phas
                 " when BAM files were provided" : "",
             tools.contains("glimpse2")   ? "${tool_citation.GLIMPSE2}" : "",
             tools.contains("quilt")      ? "${tool_citation.QUILT}"    : "",
+            tools.contains("quilt2")     ? "${tool_citation.QUILT2}"   : "",
             tools.contains("stitch")     ? "${tool_citation.STITCH}"   : "",
             tools.contains("beagle5")    ? "${tool_citation.BEAGLE5}"  : "",
             tools.contains("minimac4")   ? "${tool_citation.MINIMAC4}" : ""
@@ -899,6 +904,7 @@ def toolBibliographyText(steps, tools, compute_freq, phase) {
         MINIMAC4: '<li>Das, S., Forer, L., Schonherr, S., Sidore, C., Locke, A.E., Kwong, A., Vrieze, S.I., Chew, E.Y., Levy, S., McGue, M., Schlessinger, D., Stambolian, D., Loh, P.-R., Iacono, W.G., Swaroop, A., Scott, L.J., Cucca, F., Kronenberg, F., Boehnke, M., Abecasis, G.R., Fuchsberger, C., 2016. Next-generation genotype imputation service and methods. Nat Genet 48, 1284-1287. doi: <a href="https://doi.org/10.1038/ng.3656">10.1038/ng.3656</a></li>',
         STITCH  : '<li>Davies, R.W., Flint, J., Myers, S., Mott, R., 2016. Rapid genotype imputation from sequence without reference panels. Nat Genet 48, 965-969. doi: <a href="https://doi.org/10.1038/ng.3594">10.1038/ng.3594</a></li>',
         QUILT   : '<li>Davies, R.W., Kucka, M., Su, D., Shi, S., Flanagan, M., Cunniff, C.M., Chan, Y.F., Myers, S., 2021. Rapid genotype imputation from sequence with reference panels. Nat Genet 53, 1104-1111. doi: <a href="https://doi.org/10.1038/s41588-021-00877-0">10.1038/s41588-021-00877-0</a></li>',
+        QUILT2  : '<li>Li, Z., Albrechtsen, A., Davies, R.W., 2026. Flexible read-aware genotype imputation from sequence using biobank sized reference panels. Nat Commun 17, 524. doi: <a href="https://doi.org/10.1038/s41467-025-67218-1">10.1038/s41467-025-67218-1</a></li>',
         MULTIQC : '<li>Ewels, P., Magnusson, M., Lundin, S., Kaller, M., 2016. MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics 32, 3047-3048. doi: <a href="https://doi.org/10.1093/bioinformatics/btw354">10.1093/bioinformatics/btw354</a></li>',
         VCFLIB  : '<li>Garrison, E., Kronenberg, Z.N., Dawson, E.T., Pedersen, B.S., Prins, P., 2022. A spectrum of free software tools for processing the VCF variant call format: vcflib, bio-vcf, cyvcf2, hts-nim and slivar. PLOS Computational Biology 18, e1009123. doi: <a href="https://doi.org/10.1371/journal.pcbi.1009123">10.1371/journal.pcbi.1009123</a></li>',
         SHAPEIT5: '<li>Hofmeister, R.J., Ribeiro, D.M., Rubinacci, S., Delaneau, O., 2023. Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank. Nat Genet 1-7. doi: <a href="https://doi.org/10.1038/s41588-023-01415-w">10.1038/s41588-023-01415-w</a></li>',
@@ -917,6 +923,7 @@ def toolBibliographyText(steps, tools, compute_freq, phase) {
         tools.contains("minimac4") ? tool_biblio.MINIMAC4 : "",
         tools.contains("stitch")   ? tool_biblio.STITCH   : "",
         tools.contains("quilt")    ? tool_biblio.QUILT    : "",
+        tools.contains("quilt2")   ? tool_biblio.QUILT2   : "",
         tool_biblio.MULTIQC,
         steps.contains("panelprep") && compute_freq              ? tool_biblio.VCFLIB   : "",
         steps.contains("panelprep") && phase                     ? tool_biblio.SHAPEIT5 : "",

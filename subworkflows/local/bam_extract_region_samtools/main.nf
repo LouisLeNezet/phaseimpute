@@ -21,7 +21,7 @@ workflow BAM_EXTRACT_REGION_SAMTOOLS {
     // Extract region of interest
     SAMTOOLS_VIEW(
         ch_input_region,
-        [[], [], []],
+        ch_fasta,
         [],
         "csi"
     )

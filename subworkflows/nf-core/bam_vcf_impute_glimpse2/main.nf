@@ -96,8 +96,15 @@ workflow BAM_VCF_IMPUTE_GLIMPSE2 {
     ch_phase_input = ch_input
         .combine(ch_chunks_panel_map)
         .map { metaI, input, index, list, infos, metaCPM, regionin, regionout, panel, panel_index, gmap ->
+            def chr = regionout.tokenize(':')[0]
+            def region = regionout.tokenize(':')[1]
+            def start = region.tokenize('-')[0]
+            def end = region.tokenize('-')[1]
+            def paddedStart = String.format('%010d', start as long)
+            def paddedEnd = String.format('%010d', end as long)
+            regionoutPadded = "${chr}:${paddedStart}-${paddedEnd}"
             [
-                metaI + metaCPM,
+                metaI + metaCPM + [regionoutPadded: regionoutPadded],
                 input,
                 index,
                 list,
@@ -124,8 +131,8 @@ workflow BAM_VCF_IMPUTE_GLIMPSE2 {
             failOnDuplicate: true,
         )
         .map { meta, vcf, index ->
-            def keysToKeep = meta.keySet() - ['regionin', 'regionout']
-            [meta.subMap(keysToKeep), vcf, index]
+            def keysToKeep = meta.keySet() - ['regionin', 'regionout', 'regionoutPadded']
+            [ meta.subMap(keysToKeep), vcf, index ]
         }
         .groupTuple()
 

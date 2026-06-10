@@ -33,10 +33,13 @@ workflow BAM_IMPUTE_STITCH {
             }
             def regionout = "${chr}"
             if (start != [] && end != []) {
+                def paddedStart = String.format('%010d', start as long)
+                def paddedEnd = String.format('%010d', end as long)
+                regionoutPadded = "${chr}:${paddedStart}-${paddedEnd}"
                 regionout = "${chr}:${start}-${end}"
             }
             [
-                metaPC + metaI + ["regionout": regionout],
+                metaPC + metaI + ["regionout": regionout, "regionoutPadded": regionoutPadded],
                 bam,
                 bai,
                 bampath,
@@ -66,7 +69,7 @@ workflow BAM_IMPUTE_STITCH {
             failOnDuplicate: true,
         )
         .map { meta, vcf, index ->
-            def keysToKeep = meta.keySet() - ['regionout']
+            def keysToKeep = meta.keySet() - ['regionout', 'regionoutPadded']
             [meta.subMap(keysToKeep), vcf, index]
         }
         .groupTuple()
