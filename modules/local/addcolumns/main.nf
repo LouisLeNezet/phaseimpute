@@ -22,15 +22,21 @@ process ADDCOLUMNS {
     """
     # Find the header line
     HEADER_STR="#Genotype concordance by allele frequency bin (Variants: SNPs + indels)"
-    HEADER_LINE=\$(grep -n -m 1 "^\${HEADER_STR}" $input | cut -d: -f1 )
+    HEADER_LINE=\$(grep -n -m 1 "^\${HEADER_STR}" ${input} | cut -d: -f1 )
     HEADER_START=\$((HEADER_LINE + 1))
 
-    tail -n +\$HEADER_START $input | \\
+    tail -n +\$HEADER_START ${input} | \\
     awk 'NR==1{\$(NF+1)="ID"} NR>1{\$(NF+1)="${meta.id}"}1' | \\
     awk 'NR==1{\$(NF+1)="Depth"} NR>1{\$(NF+1)="${meta.depth}"}1' | \\
     awk 'NR==1{\$(NF+1)="GPArray"} NR>1{\$(NF+1)="${meta.gparray}"}1' | \\
     awk 'NR==1{\$(NF+1)="Tools"} NR>1{\$(NF+1)="${meta.tools}"}1' | \\
     awk 'NR==1{\$(NF+1)="Panel"} NR>1{\$(NF+1)="${meta.panel}"}1' > \\
     ${prefix}.txt
+    """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.txt
     """
 }

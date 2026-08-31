@@ -46,4 +46,12 @@ process LISTTOFILE {
         for (j in f) print f[j]
     }' > ${prefix}.idonly.txt
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.id.txt
+    touch ${prefix}.noid.txt
+    touch ${prefix}.idonly.txt
+    """
 }

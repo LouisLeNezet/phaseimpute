@@ -25,7 +25,7 @@ nextflow_process {
             assertAll(
                 { assert process.success },
                 { assert snapshot(
-                    process.out,
+                    sanitizeOutput(process.out),
                     path(process.out.txt[0][1]).readLines()
                 ).match() }
             )
@@ -49,9 +49,31 @@ nextflow_process {
             assertAll(
                 { assert process.success },
                 { assert snapshot(
-                    process.out,
+                    sanitizeOutput(process.out),
                     path(process.out.txt[0][1]).readLines()
                 ).match() }
+            )
+        }
+    }
+
+    test("Add columns to txt file with missing fields -- stub") {
+        options "-stub"
+        when {
+            process {
+                """
+                file = channel.of("# Other content\\ntest\\ntest1\\n" +
+                    "#Genotype concordance by allele frequency bin (Variants: SNPs + indels)\\n" +
+                    "Col1\\tCol2\\nA\\t1\\nB\\t2")
+                    .collectFile(name: 'sample.txt', newLine: true)
+                input[0] = channel.of([[id:"MyId", tools:"Glimpse"]]).combine(file)
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(sanitizeOutput(process.out)).match() }
             )
         }
     }

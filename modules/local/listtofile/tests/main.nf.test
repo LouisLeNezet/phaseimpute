@@ -35,4 +35,26 @@ nextflow_process {
             )
         }
     }
+
+    test("Aggregate all files into a list -- stub") {
+        options "-stub"
+        when {
+            process {
+                """
+                input[0] = channel.of([
+                    [id: "all"],
+                    [file("file1.txt"), file("file2.txt")],
+                    ["A", "B"]
+                ])
+                """
+            }
+        }
+
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(sanitizeOutput(process.out)).match() }
+            )
+        }
+    }
 }

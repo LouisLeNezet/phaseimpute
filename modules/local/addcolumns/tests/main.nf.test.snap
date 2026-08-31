@@ -1,26 +1,34 @@
 {
-    "Add columns to txt file": {
+    "Add columns to txt file with missing fields -- stub": {
         "content": [
             {
-                "0": [
+                "txt": [
                     [
                         {
                             "id": "MyId",
-                            "depth": 2,
-                            "gparray": "SNPArray",
-                            "tools": "Glimpse",
-                            "panel": "1000GP"
+                            "tools": "Glimpse"
                         },
-                        "MyId.txt:md5,da3aa04353303c5566d1bea2dbc8f883"
+                        "MyId.txt:md5,d41d8cd98f00b204e9800998ecf8427e"
                     ]
                 ],
-                "1": [
+                "versions_gawk": [
                     [
                         "ADDCOLUMNS",
                         "gawk",
                         "5.3.1"
                     ]
-                ],
+                ]
+            }
+        ],
+        "timestamp": "2026-08-31T17:23:27.388827518",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.6"
+        }
+    },
+    "Add columns to txt file": {
+        "content": [
+            {
                 "txt": [
                     [
                         {
@@ -47,31 +55,15 @@
                 "B 2 MyId 2 SNPArray Glimpse 1000GP"
             ]
         ],
+        "timestamp": "2026-08-31T17:22:49.787000371",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
-        },
-        "timestamp": "2026-03-02T21:39:34.747965952"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.6"
+        }
     },
     "Add columns to txt file with missing fields": {
         "content": [
             {
-                "0": [
-                    [
-                        {
-                            "id": "MyId",
-                            "tools": "Glimpse"
-                        },
-                        "MyId.txt:md5,87ae2dd6e6451eee25c04e23f7219fa5"
-                    ]
-                ],
-                "1": [
-                    [
-                        "ADDCOLUMNS",
-                        "gawk",
-                        "5.3.1"
-                    ]
-                ],
                 "txt": [
                     [
                         {
@@ -95,10 +87,10 @@
                 "B 2 MyId null null Glimpse null"
             ]
         ],
+        "timestamp": "2026-08-31T17:23:07.861185006",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
-        },
-        "timestamp": "2026-03-02T21:39:41.901294414"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.6"
+        }
     }
 }
