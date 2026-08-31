@@ -41,10 +41,11 @@ def chunkPrepareChannel(ch_chunks, ch_region, tool) {
 def chRegionToBed(ch_regions) {
     def ch_bed = ch_regions
         .map{ _meta, region ->
-            def chr=region.split(":")[0]
-            def pos=region.split(":")[1]
-            def start=pos.split("-")[0]
-            def end=pos.split("-")[1]
+            def lastColon = region.lastIndexOf(':')
+            def chr = region.substring(0, lastColon)
+            def pos = region.substring(lastColon + 1)
+            def start = pos.split("-")[0]
+            def end = pos.split("-")[1]
             "${chr}\t${start}\t${end}"
         }
         .collectFile(name: "regions.bed", newLine: true)
