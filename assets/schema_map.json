@@ -9,13 +9,13 @@
         "properties": {
             "chr": {
                 "type": "string",
-                "pattern": "^(chr)?[0-9]+$",
+                "pattern": "^\\S+$",
                 "errorMessage": "Chromosome must be provided and must be a string containing only numbers, with or without the prefix 'chr'",
                 "meta": ["chr"]
             },
             "map": {
                 "type": "string",
-                "pattern": "^\\S+\\.(g)?map(\\.gz)?$",
+                "pattern": "^\\S+\\.((g)?map|txt)(\\.gz)?$",
                 "errorMessage": "Map file must be provided, cannot contain spaces and must have extension '.map' or '.gmap' with optional '.gz' extension"
             }
         },
