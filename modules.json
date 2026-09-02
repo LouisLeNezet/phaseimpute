@@ -86,7 +86,7 @@
                     },
                     "custom/geneticmapconvert": {
                         "branch": "master",
-                        "git_sha": "910e3bd7551af42eff7f1da242725f9137718cd7",
+                        "git_sha": "be67eecddc6d3c22faa270757dd15d43a2777578",
                         "installed_by": ["modules"]
                     },
                     "gawk": {
@@ -277,7 +277,7 @@
                     },
                     "vcf_gather_bcftools": {
                         "branch": "master",
-                        "git_sha": "54e41f4ed3aead45054380a9befeb927612ffc91",
+                        "git_sha": "66d44a6ccf7c5fdfe72e1008230ebc1bf99be8b0",
                         "installed_by": ["bam_variant_calling_mpileup_bcftools", "subworkflows"]
                     },
                     "vcf_impute_beagle5": {
