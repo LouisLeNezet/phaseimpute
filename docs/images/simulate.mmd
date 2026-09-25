@@ -1,0 +1,74 @@
+%%metro title: Simulation step `--steps simulate`
+%%metro line_spread: centered
+%%metro diamond_style: straight
+%%metro line: simulate | Simulate | #c792ea
+%%metro line: qc | Quality Check | #008000
+%%metro grid: split_bam | 1,1
+%%metro grid: subsample | 2,0
+%%metro grid: coverage | 2,1
+%%metro grid: output | 3,0
+%%metro grid: report | 3,1
+
+graph LR
+	subgraph input [Inputs]
+        reads[Input BAMs]
+    end
+
+    subgraph split_bam [Split BAMs]
+    	%%metro number: 2
+    	region[If regions]
+        view[samtools\nview]
+        merge[samtools\nmerge]
+        region -->|simulate|view
+        view -->|simulate| merge
+    end
+
+    subgraph inter []
+        noregion[If no regions]
+    end
+
+    subgraph subsample [Downsample to depth]
+    	%%metro number: 3
+        coverage2[Coverage\n/ region]
+        fract[Compute\nfraction]
+        view2[Downsample]
+        coverage3[Coverage\nsimulated]
+        filterchr2[Filter chr]
+
+        coverage2 -->|simulate| fract
+        fract  -->|simulate| view2
+        view2 -->|qc| coverage3
+        coverage3 -->|qc| filterchr2
+        view2 -->|simulate| _empty
+        _empty --> |simulate| _empty2
+    end
+
+    subgraph coverage [Compute coverage]
+    	%%metro number: 4
+        coverage[Global\ncoverage]
+        filterchr[Filter chr]
+        coverage -->|qc| filterchr
+    end
+
+    subgraph output [Outputs]
+    	%%metro number: 5
+        simbams[Simulated BAMS]
+    end
+
+    subgraph report [Report]
+    	%%metro number: 6
+        multiqc[MultiQC]
+    end
+
+    reads -->|simulate| region
+
+    reads -->|simulate| noregion
+    noregion -->|simulate| coverage2
+
+    merge -->|simulate| coverage2
+    merge -->|qc| coverage
+
+    filterchr -->|qc| multiqc
+    filterchr2 -->|qc| multiqc
+
+    _empty2 -->|simulate| simbams
