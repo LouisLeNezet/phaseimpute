@@ -1,0 +1,100 @@
+%%metro title: Panel preparation step `--steps panelprep`
+%%metro line_spread: centered
+%%metro diamond_style: straight
+%%metro line: panelprep | Panel variants | #c792ea
+%%metro line: chunks | Chunks | #4d6fdf
+%%metro line: posfile | Posfile | #7bdf4d
+%%metro grid: input | 0,0
+%%metro grid: ifnormalize | 1,0
+%%metro grid: ifcomputefreq | 2,0
+%%metro grid: _normalizedvcf | 3,0
+%%metro grid: site_extraction | 4,0
+%%metro grid: chunk | 4,1
+%%metro grid: phase | 5,0
+%%metro grid: _phasedvcf | 6,0
+
+graph LR
+	subgraph input [Inputs]
+        panel[Panel VCF]
+    end
+
+    subgraph ifnormalize [If --normalize]
+        normalize[Normalize\nbcftools norm]
+        biallelic[Subset variants + samples\nbcftools view]
+
+        normalize -->|panelprep|biallelic
+    end
+
+    subgraph ifcomputefreq [If --compute_freq]
+        filltags[Compute Info\nbcftools plugin filltags]
+    end
+
+    subgraph _normalizedvcf [ ]
+        normedvcf[Normalized VCF]
+    end
+
+    subgraph site_extraction [Extract sites and convert data (if no --posfile)]
+    	%%metro number: 3
+    	convert[Convert\nbcftools convert]
+        extractsites[Extract sites\nbcftools view]
+        converttsv[Convert TSV to CSV\ngawk]
+        compress[Compress\nbgzip]
+        posfile[Posfile]
+
+        convert -->|posfile|converttsv
+        converttsv -->|posfile|compress
+
+        convert -->|posfile|posfile
+        extractsites -->|posfile|posfile
+        compress -->|posfile|posfile
+    end
+
+    subgraph chunk [Obtain chunks]
+    	%%metro number: 4
+    	glimpse1[Chunk with Glimpse1]
+        glimpse2[Chunk with Glimpse2]
+        chunks[Chunks]
+
+        glimpse1 -->|chunks|chunks
+        glimpse2 -->|chunks|chunks
+    end
+
+    subgraph phase [Phase variants (if --phase)]
+    	%%metro number: 5
+    	phase[Phase\nshapeit5 phasecommon]
+        index1[Index\nbcftools index]
+        ligate[Ligate\nshapeit5 ligate]
+        index2[Index\nbcftools index]
+        _phasedchunk[""]
+        _phasedligate[""]
+
+        phase -->|panelprep|index1
+        index1 -->|panelprep|ligate
+        phase -->|panelprep|_phasedchunk
+        _phasedchunk-->|panelprep|ligate
+        ligate -->|panelprep|index2
+        ligate -->|panelprep|_phasedligate
+    end
+
+    subgraph _phasedvcf [""]
+        phasedvcf[Phased VCF]
+    end
+
+    panel -->|panelprep|normalize
+    panel -->|panelprep|filltags
+    biallelic -->|panelprep|filltags
+    biallelic -->|panelprep|normedvcf
+    filltags -->|panelprep|normedvcf
+    panel -->|panelprep|normedvcf
+
+    normedvcf -->|panelprep|convert
+    normedvcf -->|panelprep|extractsites
+
+    normedvcf -->|panelprep|glimpse1
+    normedvcf -->|panelprep|glimpse2
+
+    chunks -->|chunks|phase
+    normedvcf -->|panelprep|phase
+    index2 -->|panelprep|phasedvcf
+    _phasedligate -->|panelprep|phasedvcf
+    normedvcf -->|panelprep|phasedvcf

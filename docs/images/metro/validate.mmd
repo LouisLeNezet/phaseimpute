@@ -1,0 +1,42 @@
+%%metro title: Validation step `--steps validate`
+%%metro line_spread: centered
+%%metro diamond_style: straight
+%%metro line: posfile | Posfile | #c792ea
+%%metro line: truthbam | Truth BAM | #eab592
+%%metro line: truthvcf | Truth VCF | #c8ea92
+%%metro line: samples | Samples infos | #929bea
+%%metro line: stats | Stats | #92eaea
+%%metro grid: input | 0,0
+%%metro grid: prepare | 1,0
+%%metro grid: vcfconcordanceglimpse2 | 2,0
+
+graph LR
+	subgraph input [Inputs]
+        chposfile[Posfile]
+        truth[Truth file]
+    end
+
+    subgraph prepare [Prepare data]
+        concatposfile[Concatenate Posfile]
+        statspanel[Compute panel stats\bcftools stats]
+        gltruth[Compute genotype likelihood]
+        querytruth[Obtain samples names]
+        gawktruth[DO SOMETHING]
+        splittruth[Split truth VCF / sample]
+        statstruth[Compute truth stats\bcftools stats]
+
+        concatposfile -->|posfile|statspanel
+        truth -->|truthbam|gltruth
+
+        truth -->|truthvcf|querytruth
+        gltruth -->|truthvcf|querytruth
+
+        querytruth -->|samples|gawktruth
+
+    end
+
+    subgraph vcfconcordanceglimpse2 [Prepare data]
+
+    end
+
+    chposfile -->|posfile|concatposfile
