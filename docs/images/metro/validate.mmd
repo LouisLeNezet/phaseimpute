@@ -1,42 +1,112 @@
 %%metro title: Validation step `--steps validate`
-%%metro line_spread: centered
 %%metro diamond_style: straight
-%%metro line: posfile | Posfile | #c792ea
+%%metro line_spread: centered
+%%metro line: samples | Samples infos | #929bea
 %%metro line: truthbam | Truth BAM | #eab592
 %%metro line: truthvcf | Truth VCF | #c8ea92
-%%metro line: samples | Samples infos | #929bea
+%%metro line: posfile | Posfile | #c792ea
 %%metro line: stats | Stats | #92eaea
+%%metro line: target | Target VCF | #008000
 %%metro grid: input | 0,0
 %%metro grid: prepare | 1,0
 %%metro grid: vcfconcordanceglimpse2 | 2,0
+%%metro grid: stats | 3,1
 
 graph LR
-	subgraph input [Inputs]
-        chposfile[Posfile]
+    subgraph input [Inputs]
         truth[Truth file]
+        posfile[Posfile]
+        impute[Imputed target]
     end
 
     subgraph prepare [Prepare data]
-        concatposfile[Concatenate Posfile]
-        statspanel[Compute panel stats\bcftools stats]
-        gltruth[Compute genotype likelihood]
-        querytruth[Obtain samples names]
-        gawktruth[DO SOMETHING]
-        splittruth[Split truth VCF / sample]
-        statstruth[Compute truth stats\bcftools stats]
+        truthin[hidden]
+        concatposfile[Concatenate Posfile\nbcftools concat]
 
+        gltruth[Compute genotype likelihood\nbcftools mpileup]
+        empty1[empty1]
+        statspanel[Compute panel stats\nbcftools stats]
+
+        mergegl[Merge all individuals\nbcftools merge]
+        empty2[empty2]
+        emptyqc1[emptyqc1]
+
+        concatgl[Concatenate all chr\nbcftools concat]
+        empty3[empty3]
+        emptyqc2[emptyqc2]
+
+        annotategl[Set IDs\nbcftools annotate]
+        empty4[empty4]
+        emptyqc3[emptyqc3]
+
+        truthvcf[Truth VCF]
+        emptyqc4[emptyqc4]
+
+        querytruth[Obtain samples names\nbcftools query]
+        empty5[empty5]
+        statstruth[Compute truth stats\nbcftools stats]
+        emptyqc5[emptyqc5]
+
+		gawktruth[Add .truth suffix\ngawk]
+        empty6[empty6]
+        emptyqc6[emptyqc6]
+
+        splittruth[Split truth VCF / sample\nbcftools plugin split]
+        emptyqc7[emptyqc7]
+
+        truthin -->|truthbam|gltruth
+        truthin -->|truthvcf|empty1
         concatposfile -->|posfile|statspanel
-        truth -->|truthbam|gltruth
 
-        truth -->|truthvcf|querytruth
-        gltruth -->|truthvcf|querytruth
+        gltruth -->|truthbam|mergegl
+        empty1 -->|truthvcf|empty2
+		statspanel -->|stats|emptyqc1
+
+        mergegl -->|truthbam|concatgl
+        empty2 -->|truthvcf|empty3
+        emptyqc1 -->|stats|emptyqc2
+
+        concatgl -->|truthbam|annotategl
+        empty3 -->|truthvcf|empty4
+        emptyqc2 -->|stats|emptyqc3
+
+        annotategl -->|truthbam|truthvcf
+        empty4 -->|truthvcf|truthvcf
+        emptyqc3 -->|stats|emptyqc4
+
+        truthvcf -->|truthvcf|querytruth
+        truthvcf -->|truthvcf|empty5
+        truthvcf -->|truthvcf|statstruth
+        emptyqc4 -->|stats|emptyqc5
 
         querytruth -->|samples|gawktruth
+        empty5-->|truthvcf|empty6
+        emptyqc5 -->|stats|emptyqc6
+        statstruth -->|stats|emptyqc6
 
+        gawktruth -->|samples|splittruth
+        empty6-->|truthvcf|splittruth
     end
 
     subgraph vcfconcordanceglimpse2 [Prepare data]
+        glimpse2concordance[Compute concordance\nglimpse2 concordance]
+        addmetainfos[Add meta informations\ngawk]
+        gunzip[gunzip]
+        addcolumns[Add meta informations\naddcolumns]
+        gawktable[Create summary table\ngawk]
 
+        glimpse2concordance -->|stats| addmetainfos
+
+        glimpse2concordance -->|stats| gunzip
+        gunzip -->|stats| addcolumns
+        addcolumns -->|stats| gawktable
     end
 
-    chposfile -->|posfile|concatposfile
+    subgraph stats [Stats]
+        multiqc[MultiQC]
+    end
+
+    truth -->|truthvcf|truthin
+    truth -->|truthbam|truthin
+
+    posfile -->|posfile|concatposfile
