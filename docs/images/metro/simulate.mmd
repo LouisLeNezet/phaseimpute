@@ -1,8 +1,8 @@
 %%metro title: Simulation step `--steps simulate`
 %%metro line_spread: centered
 %%metro diamond_style: straight
-%%metro line: simulate | Simulate | #c792ea
-%%metro line: qc | Quality Check | #008000
+%%metro line: bam | BAM inputs | #1BB6AFFF
+%%metro line: stats | Stats | #F18046
 %%metro grid: split_bam | 1,1
 %%metro grid: subsample | 2,0
 %%metro grid: coverage | 2,1
@@ -19,11 +19,11 @@ graph LR
     	region[If regions]
         view[samtools\nview]
         merge[samtools\nmerge]
-        region -->|simulate|view
-        view -->|simulate| merge
+        region -->|bam|view
+        view -->|bam| merge
     end
 
-    subgraph inter []
+    subgraph _inter [hidden]
         noregion[If no regions]
     end
 
@@ -32,22 +32,26 @@ graph LR
         coverage2[Coverage\n/ region]
         fract[Compute\nfraction]
         view2[Downsample]
+        _empty[hidden]
         coverage3[Coverage\nsimulated]
         filterchr2[Filter chr]
 
-        coverage2 -->|simulate| fract
-        fract  -->|simulate| view2
-        view2 -->|qc| coverage3
-        coverage3 -->|qc| filterchr2
-        view2 -->|simulate| _empty
-        _empty --> |simulate| _empty2
+        coverage2 -->|bam| fract
+        fract  -->|bam| view2
+        view2 -->|bam| _empty
+        _empty --> |bam| _empty2
+
+        %% should be bam
+        view2 -->|stats| coverage3
+
+        coverage3 -->|stats| filterchr2
     end
 
     subgraph coverage [Compute coverage]
     	%%metro number: 4
         coverage[Global\ncoverage]
         filterchr[Filter chr]
-        coverage -->|qc| filterchr
+        coverage -->|stats| filterchr
     end
 
     subgraph output [Outputs]
@@ -60,15 +64,15 @@ graph LR
         multiqc[MultiQC]
     end
 
-    reads -->|simulate| region
+    reads -->|bam| region
 
-    reads -->|simulate| noregion
-    noregion -->|simulate| coverage2
+    reads -->|bam| noregion
+    noregion -->|bam| coverage2
 
-    merge -->|simulate| coverage2
-    merge -->|qc| coverage
+    merge -->|bam| coverage2
+    merge -->|stats| coverage
 
-    filterchr -->|qc| multiqc
-    filterchr2 -->|qc| multiqc
+    _empty2 -->|bam| simbams
 
-    _empty2 -->|simulate| simbams
+    filterchr -->|stats| multiqc
+    filterchr2 -->|stats| multiqc
