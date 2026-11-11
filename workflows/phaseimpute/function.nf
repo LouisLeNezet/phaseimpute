@@ -22,7 +22,7 @@ def chunkPrepareChannel(ch_chunks, ch_region, tool) {
                 return [ meta, row[2], row[3] ] // header is 'ID', 'Chr', 'RegionIn', 'RegionOut', 'Size1', 'Size2'
             }
             if (row.size() == 8) {
-                return [ meta, row[3], row[2] ] // header is 'ID', 'Chr', 'RegionBuff', 'RegionCnk', 'WindowCm', 'WindowMb', 'NbTotVariants', 'NbComVariants'
+                return [ meta, row[2], row[3] ] // header is 'ID', 'Chr', 'RegionBuff', 'RegionCnk', 'WindowCm', 'WindowMb', 'NbTotVariants', 'NbComVariants'
             }
             error "Chunks csv should have either 6 columns (glimpse V1 format) or 8 columns (glimpse V2 format)"
         }

@@ -53,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#317](https://github.com/nf-core/phaseimpute/pull/317) - Improve `--steps` management.
 - [#321](https://github.com/nf-core/phaseimpute/pull/321) - Use `.csi` index for all configurable index outputs.
 - [#323](https://github.com/nf-core/phaseimpute/pull/323) - Renamed output folder `prep_panel` to `panel_preparation`.
+- [#328](https://github.com/nf-core/phaseimpute/pull/328) - Update genetic map convertion module.
 
 ### `Fixed`
 
