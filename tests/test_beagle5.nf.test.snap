@@ -143,11 +143,11 @@
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
-                    "1000GP_chr21.stitch.map:md5,939930334691cc1730c3c322af8c2c32",
+                    "1000GP_chr21.stitch.map:md5,9d53263e58ba1f0ae33cc4f84650a3af",
                     "1000GP_chr22.glimpse.map:md5,d541ba3ef55d3cff7ad3273ba4be7c64",
                     "1000GP_chr22.minimac.map:md5,1e35445b12cf8dfb1273500223a43a70",
                     "1000GP_chr22.plink.map:md5,b70cfdef56d870e575ab29374cfcecd3",
-                    "1000GP_chr22.stitch.map:md5,24eea1320e0033b04c5f5e6fb7cff690",
+                    "1000GP_chr22.stitch.map:md5,f2599aab6d237dabc13feb0f29ce86ee",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,82c393ee7646f820b76e6bf60e5824c4",
@@ -210,10 +210,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-05T19:32:42.422804031",
+        "timestamp": "2026-11-11T13:40:08.59769358",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Check test_beagle5 - no map - no chunks": {
