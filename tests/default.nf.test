@@ -28,7 +28,6 @@ nextflow_pipeline {
                 ).match() }
             )
         }
-
     }
 
     test("-profile test - no fasta") {
@@ -43,7 +42,7 @@ nextflow_pipeline {
         then {
             assertAll(
                 { assert workflow.failed },
-                { assert workflow.stdout.any { line -> line.contains("Reference genome FASTA file not found. Please provide a genome name or a path to a FASTA file.") } }
+                { assert (workflow.stdout + workflow.stderr).any { line -> line.contains("Reference genome FASTA file not found. Please provide a genome name or a path to a FASTA file.") } }
             )
         }
 
