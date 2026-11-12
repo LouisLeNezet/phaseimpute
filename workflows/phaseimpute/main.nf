@@ -389,7 +389,7 @@ workflow PHASEIMPUTE {
             GAWK_POSFILE_IMPUTE(
                 ch_posfile.map{
                     meta, _site, _site_index, _hap, _legend, posfile -> [
-                        meta, posfile
+                        meta, posfile, "txt"
                     ]
                 }, [], false
             )
@@ -721,7 +721,11 @@ workflow PHASEIMPUTE {
 
         // Prepare renaming file
         BCFTOOLS_QUERY_IMPUTED(ch_input_validate, [], [], [])
-        GAWK_IMPUTED(BCFTOOLS_QUERY_IMPUTED.out.output, [], false)
+        GAWK_IMPUTED(
+            BCFTOOLS_QUERY_IMPUTED.out.output
+                .map{ meta, file -> [meta, file, "txt"] },
+            [], false
+        )
         ch_split_imputed = ch_input_validate.join(GAWK_IMPUTED.out.output)
 
         // Split result by samples
@@ -811,7 +815,11 @@ workflow PHASEIMPUTE {
 
         // Prepare renaming file
         BCFTOOLS_QUERY_TRUTH(ch_truth_vcf, [], [], [])
-        GAWK_TRUTH(BCFTOOLS_QUERY_TRUTH.out.output, [], false)
+        GAWK_TRUTH(
+            BCFTOOLS_QUERY_TRUTH.out.output
+                .map{ meta, file -> [meta, file, "txt"] },
+            [], false
+        )
         ch_split_truth = ch_truth_vcf.join(GAWK_TRUTH.out.output)
 
         // Split truth vcf by samples

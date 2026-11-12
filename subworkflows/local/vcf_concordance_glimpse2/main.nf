@@ -40,13 +40,15 @@ workflow VCF_CONCORDANCE_GLIMPSE2 {
     )
 
     GAWK_ERROR_SPL(
-        GLIMPSE2_CONCORDANCE.out.errors_spl,
+        GLIMPSE2_CONCORDANCE.out.errors_spl
+            .map { meta, txt -> [meta, txt, "txt.gz"] },
         [],
         false
     )
 
     GAWK_RSQUARE_SPL(
-        GLIMPSE2_CONCORDANCE.out.rsquare_spl,
+        GLIMPSE2_CONCORDANCE.out.rsquare_spl
+            .map { meta, txt -> [meta, txt, "txt.gz"] },
         [],
         false
     )
@@ -77,7 +79,7 @@ workflow VCF_CONCORDANCE_GLIMPSE2 {
             }
             .map { sorted_list ->
                 def all_files = sorted_list.collect { _meta, file -> file }
-                [["id": "AllSamples"], all_files]
+                [["id": "AllSamples"], all_files, "txt"]
             },
         [],
         false
