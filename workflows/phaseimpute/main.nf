@@ -580,12 +580,12 @@ workflow PHASEIMPUTE {
             // Use provided chunks if --chunks or whole chromosome
             ch_chunks_quilt = chunkPrepareChannel(ch_chunks, ch_region, "quilt")
 
-            ch_posfile_quilt = ch_posfile
+            ch_reference_panel_quilt = ch_posfile
                 .map{
                     meta, _site, _site_index, hap, legend, _posfile -> [
                         meta, hap, legend
                     ]
-                }.join(BGZIP_POSFILE_IMPUTE.out.output)
+                }
 
             // Impute BAMs with QUILT
             BAM_IMPUTE_QUILT(
@@ -594,7 +594,7 @@ workflow PHASEIMPUTE {
                         meta, file, index, bampath_noid, bamnames
                     ]
                 },
-                ch_posfile_quilt,
+                ch_reference_panel_quilt,
                 ch_chunks_quilt,
                 ch_map_stitch,
                 ch_fasta,
