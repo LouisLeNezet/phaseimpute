@@ -190,7 +190,8 @@ workflow PHASEIMPUTE {
         )
 
         FILTER_CHR_INP(
-            SAMTOOLS_COVERAGE_INP.out.coverage,
+            SAMTOOLS_COVERAGE_INP.out.coverage
+                .map{ meta, file -> [meta, file, "txt"] },
             filter_chr_program,
             false
         )
@@ -217,7 +218,8 @@ workflow PHASEIMPUTE {
             )
 
             FILTER_CHR_DWN(
-                SAMTOOLS_COVERAGE_DWN.out.coverage,
+                SAMTOOLS_COVERAGE_DWN.out.coverage
+                    .map{ meta, file -> [meta, file, "txt"] },
                 filter_chr_program,
                 false
             )
