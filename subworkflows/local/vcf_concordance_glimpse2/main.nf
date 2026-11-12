@@ -41,14 +41,14 @@ workflow VCF_CONCORDANCE_GLIMPSE2 {
 
     GAWK_ERROR_SPL(
         GLIMPSE2_CONCORDANCE.out.errors_spl
-            .map { meta, txt -> [meta, txt, "txt"] },
+            .map { meta, txt -> [meta, txt, "txt.gz"] },
         [],
         false
     )
 
     GAWK_RSQUARE_SPL(
         GLIMPSE2_CONCORDANCE.out.rsquare_spl
-            .map { meta, txt -> [meta, txt, "txt"] },
+            .map { meta, txt -> [meta, txt, "txt.gz"] },
         [],
         false
     )
