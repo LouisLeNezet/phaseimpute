@@ -14,22 +14,22 @@
                         "gawk": "5.3.1"
                     },
                     "SAMTOOLS_COVERAGE": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "SAMTOOLS_COVERAGE_DWN": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "SAMTOOLS_COVERAGE_INP": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "SAMTOOLS_MERGE": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "SAMTOOLS_VIEW": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "Workflow": {
                         "nf-core/phaseimpute": "v1.2.0dev"

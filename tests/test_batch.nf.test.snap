@@ -11,37 +11,37 @@
                         "samtools": "1.23"
                     },
                     "BCFTOOLS_CONCAT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_LIGATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_PHASE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_IMPUTED": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_TRUTH": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_PANEL": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "GAWK": {
@@ -75,7 +75,7 @@
                         "gunzip": "1.13"
                     },
                     "HTSLIB_BGZIPTABIX": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "LISTTOFILE": {
@@ -86,7 +86,7 @@
                         "r-quilt": "1.0.5"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "VCFCHREXTRACT": {
                         "bcftools": "1.22"

@@ -5,25 +5,25 @@
                 "workflow size": 189,
                 "versions": {
                     "BCFTOOLS_CONCAT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_LIGATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_PHASE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSETGT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_IMPUTED": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BEAGLE5_BEAGLE": {
                         "beagle": "5.5"
@@ -44,7 +44,7 @@
                         "glimpse": "1.1.1"
                     },
                     "HTSLIB_BGZIPTABIX": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "MINIMAC4_COMPRESSREF": {
@@ -54,7 +54,7 @@
                         "minimac4": "4.1.6"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "VCFCHREXTRACT": {
                         "bcftools": "1.22"
@@ -501,40 +501,40 @@
                         "samtools": "1.23"
                     },
                     "BCFTOOLS_ANNOTATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_CONCAT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_LIGATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_PHASE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MERGE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSETGT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_IMPUTED": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
@@ -562,7 +562,7 @@
                         "glimpse": "1.1.1"
                     },
                     "HTSLIB_BGZIPTABIX": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "LISTTOFILE": {
@@ -577,7 +577,7 @@
                         "r-quilt": "2.0.4"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "STITCH": {
                         "r-base": "4.4.2",
