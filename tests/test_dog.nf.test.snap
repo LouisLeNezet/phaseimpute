@@ -26,7 +26,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
                         "bcftools": "1.25"
