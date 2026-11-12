@@ -23,7 +23,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
                         "bcftools": "1.25"
@@ -32,7 +32,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -317,7 +317,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T15:15:41.906279078",
+        "timestamp": "2026-11-12T12:20:38.697325644",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

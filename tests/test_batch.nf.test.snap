@@ -35,7 +35,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
                         "bcftools": "1.25"

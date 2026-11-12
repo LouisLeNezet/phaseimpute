@@ -991,7 +991,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_NORM": {
                         "bcftools": "1.25"
@@ -1009,13 +1009,13 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_PANEL": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_VIEW": {
                         "bcftools": "1.25"
@@ -1934,7 +1934,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:34:37.019708959",
+        "timestamp": "2026-11-12T12:31:37.474875039",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

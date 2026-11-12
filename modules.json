@@ -41,7 +41,7 @@
                     },
                     "bcftools/mpileup": {
                         "branch": "master",
-                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
+                        "git_sha": "140a5c4d654dfb1e609334d2543bdfe22f8288db",
                         "installed_by": ["bam_variant_calling_mpileup_bcftools"]
                     },
                     "bcftools/norm": {

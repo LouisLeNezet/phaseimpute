@@ -20,7 +20,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "GAWK_IMPUTED": {
                         "gawk": "5.3.1"
@@ -241,7 +241,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.25"
+                        "bcftools": "1.23.1"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
