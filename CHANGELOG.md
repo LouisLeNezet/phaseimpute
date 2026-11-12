@@ -54,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#321](https://github.com/nf-core/phaseimpute/pull/321) - Use `.csi` index for all configurable index outputs.
 - [#323](https://github.com/nf-core/phaseimpute/pull/323) - Renamed output folder `prep_panel` to `panel_preparation`.
 - [#328](https://github.com/nf-core/phaseimpute/pull/328) - Update genetic map convertion module.
+- [#329](https://github.com/nf-core/phaseimpute/pull/329) - Update modules and subworkflows.
 
 ### `Fixed`
 
@@ -78,10 +79,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | Dependency          | Old version | New version    |
 | ------------------- | ----------- | -------------- |
 | `bedtools`          | 2.31.1      | No longer used |
-| `samtools`          | 1.22.1      | 1.23           |
+| `samtools`          | 1.22.1      | 1.25           |
+| `bcftools`          | 1.23.1      | 1.25           |
 | `gawk`              | 5.3.0       | 5.3.1          |
 | `multiqc`           | 1.32        | 1.35           |
-| `tabix` -> `htslib` | 1.11        | 1.23.1         |
+| `tabix` -> `htslib` | 1.11        | 1.25           |
 
 ### New contributors
 
