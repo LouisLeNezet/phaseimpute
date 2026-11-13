@@ -23,7 +23,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
                         "bcftools": "1.25"
@@ -32,7 +32,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "GAWK_IMPUTED": {
                         "gawk": "5.3.1"
@@ -178,15 +178,15 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878_chr21.bcftools_stats.txt:md5,f6504c9a043268651cc70aade534e5e8",
-                    "NA12878_chr22.bcftools_stats.txt:md5,41f17b319c7dbf47be9015971710f5d2",
-                    "NA19401_chr21.bcftools_stats.txt:md5,3ef1da38844a20a9c8709b397b4c4adf",
-                    "NA19401_chr22.bcftools_stats.txt:md5,52998d0e36b72d0041f1553106401482",
-                    "NA20359_chr21.bcftools_stats.txt:md5,0a18a5824ed6b3958bd3b3d3f0cc44c0",
-                    "NA20359_chr22.bcftools_stats.txt:md5,a0c62ca49ef39b6cb03442a3f9ce224c",
-                    "NA12878.glimpse1.bcftools_stats.txt:md5,ef6b20f1b0bec03c7ac61375a5474119",
-                    "NA19401.glimpse1.bcftools_stats.txt:md5,2920962fbdd91e31850baa9be89dd912",
-                    "NA20359.glimpse1.bcftools_stats.txt:md5,726b11871cf8e4223e11b9ef820f5279",
+                    "NA12878_chr21.bcftools_stats.txt:md5,eedc6541faade0ffe106cf84171fffc1",
+                    "NA12878_chr22.bcftools_stats.txt:md5,b48e509959512bb83862617b66336106",
+                    "NA19401_chr21.bcftools_stats.txt:md5,deacf36fcbf18e77531e87188b531435",
+                    "NA19401_chr22.bcftools_stats.txt:md5,cb06e884539deacd2985cb966cfff8c0",
+                    "NA20359_chr21.bcftools_stats.txt:md5,441d035c36f9a7e5efa86befd5b436b6",
+                    "NA20359_chr22.bcftools_stats.txt:md5,81cb2cb89343f219e9dc12212a543cfe",
+                    "NA12878.glimpse1.bcftools_stats.txt:md5,40ee749696fa64594e90522f662033ab",
+                    "NA19401.glimpse1.bcftools_stats.txt:md5,a972282683c7b4b0cf955f201c9fd8b9",
+                    "NA20359.glimpse1.bcftools_stats.txt:md5,179aecbbcd507d15cf11acc37c43a498",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,bda6ac9e13fd82da1c4725287937332d",
@@ -230,43 +230,43 @@
                     ],
                     [
                         "NA12878_chr21.vcf.gz",
-                        "4198ecfcd59029b10716f2c033f96343"
+                        "b360ce615c90c8c2e8b4d8cfdf986702"
                     ],
                     [
                         "NA12878_chr22.vcf.gz",
-                        "2de6a606cb5ae4284b979fc00934302f"
+                        "3b8c1f10e96939f398cc52aef3048756"
                     ],
                     [
                         "NA19401_chr21.vcf.gz",
-                        "307139605cffb09295b27619d1e3cf41"
+                        "a07a7e17b11306a057a0dcc0935615b3"
                     ],
                     [
                         "NA19401_chr22.vcf.gz",
-                        "7d45992def27887e96cd859480189509"
+                        "a309d03957aa2fae2e66dc83bd66d1e1"
                     ],
                     [
                         "NA20359_chr21.vcf.gz",
-                        "1cca23409d5074b28e41fcda7f978021"
+                        "a0758ed23b619018956117745993aabd"
                     ],
                     [
                         "NA20359_chr22.vcf.gz",
-                        "a4888d2aa2af452d115f70a58ebfb8f4"
+                        "c4982c848c0d34c56566f2b702c299b2"
                     ],
                     [
                         "all_samples.annotate.vcf.gz",
-                        "df3e9828f8939a468c1aed8b91b6d800"
+                        "7df5b547fda1e56718ec8e04388df87c"
                     ],
                     [
                         "all_samples.concat.vcf.gz",
-                        "b3af1cc28583d6d5f9751bcde0a94999"
+                        "6ffe557498deaddf99e3ff535dfc6078"
                     ],
                     [
                         "all_samples_chr21.merge.vcf.gz",
-                        "8aa42728d938b7f47130497b4dc86955"
+                        "4d18c715884e8edcfe0456e7ed4bb6c4"
                     ],
                     [
                         "all_samples_chr22.merge.vcf.gz",
-                        "170d05c06240dceb6f079c70b1e234e3"
+                        "503a0119b23a10f351e2ec9c379676d9"
                     ]
                 ],
                 "CSV files": [
@@ -292,10 +292,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-25T21:34:55.670531419",
+        "timestamp": "2026-11-13T12:15:51.46506112",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Check test_glimpse1 - with map - with chunks": {
@@ -322,7 +322,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
                         "bcftools": "1.25"
@@ -331,7 +331,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -494,15 +494,15 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878_chr21.bcftools_stats.txt:md5,f6504c9a043268651cc70aade534e5e8",
-                    "NA12878_chr22.bcftools_stats.txt:md5,41f17b319c7dbf47be9015971710f5d2",
-                    "NA19401_chr21.bcftools_stats.txt:md5,3ef1da38844a20a9c8709b397b4c4adf",
-                    "NA19401_chr22.bcftools_stats.txt:md5,52998d0e36b72d0041f1553106401482",
-                    "NA20359_chr21.bcftools_stats.txt:md5,0a18a5824ed6b3958bd3b3d3f0cc44c0",
-                    "NA20359_chr22.bcftools_stats.txt:md5,a0c62ca49ef39b6cb03442a3f9ce224c",
-                    "NA12878.glimpse1.bcftools_stats.txt:md5,ef6b20f1b0bec03c7ac61375a5474119",
-                    "NA19401.glimpse1.bcftools_stats.txt:md5,2920962fbdd91e31850baa9be89dd912",
-                    "NA20359.glimpse1.bcftools_stats.txt:md5,726b11871cf8e4223e11b9ef820f5279",
+                    "NA12878_chr21.bcftools_stats.txt:md5,eedc6541faade0ffe106cf84171fffc1",
+                    "NA12878_chr22.bcftools_stats.txt:md5,b48e509959512bb83862617b66336106",
+                    "NA19401_chr21.bcftools_stats.txt:md5,deacf36fcbf18e77531e87188b531435",
+                    "NA19401_chr22.bcftools_stats.txt:md5,cb06e884539deacd2985cb966cfff8c0",
+                    "NA20359_chr21.bcftools_stats.txt:md5,441d035c36f9a7e5efa86befd5b436b6",
+                    "NA20359_chr22.bcftools_stats.txt:md5,81cb2cb89343f219e9dc12212a543cfe",
+                    "NA12878.glimpse1.bcftools_stats.txt:md5,40ee749696fa64594e90522f662033ab",
+                    "NA19401.glimpse1.bcftools_stats.txt:md5,a972282683c7b4b0cf955f201c9fd8b9",
+                    "NA20359.glimpse1.bcftools_stats.txt:md5,179aecbbcd507d15cf11acc37c43a498",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -554,43 +554,43 @@
                     ],
                     [
                         "NA12878_chr21.vcf.gz",
-                        "4198ecfcd59029b10716f2c033f96343"
+                        "b360ce615c90c8c2e8b4d8cfdf986702"
                     ],
                     [
                         "NA12878_chr22.vcf.gz",
-                        "2de6a606cb5ae4284b979fc00934302f"
+                        "3b8c1f10e96939f398cc52aef3048756"
                     ],
                     [
                         "NA19401_chr21.vcf.gz",
-                        "307139605cffb09295b27619d1e3cf41"
+                        "a07a7e17b11306a057a0dcc0935615b3"
                     ],
                     [
                         "NA19401_chr22.vcf.gz",
-                        "7d45992def27887e96cd859480189509"
+                        "a309d03957aa2fae2e66dc83bd66d1e1"
                     ],
                     [
                         "NA20359_chr21.vcf.gz",
-                        "1cca23409d5074b28e41fcda7f978021"
+                        "a0758ed23b619018956117745993aabd"
                     ],
                     [
                         "NA20359_chr22.vcf.gz",
-                        "a4888d2aa2af452d115f70a58ebfb8f4"
+                        "c4982c848c0d34c56566f2b702c299b2"
                     ],
                     [
                         "all_samples.annotate.vcf.gz",
-                        "df3e9828f8939a468c1aed8b91b6d800"
+                        "7df5b547fda1e56718ec8e04388df87c"
                     ],
                     [
                         "all_samples.concat.vcf.gz",
-                        "b3af1cc28583d6d5f9751bcde0a94999"
+                        "6ffe557498deaddf99e3ff535dfc6078"
                     ],
                     [
                         "all_samples_chr21.merge.vcf.gz",
-                        "8aa42728d938b7f47130497b4dc86955"
+                        "4d18c715884e8edcfe0456e7ed4bb6c4"
                     ],
                     [
                         "all_samples_chr22.merge.vcf.gz",
-                        "170d05c06240dceb6f079c70b1e234e3"
+                        "503a0119b23a10f351e2ec9c379676d9"
                     ]
                 ],
                 "CSV files": [
@@ -616,7 +616,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:48:41.858285765",
+        "timestamp": "2026-11-13T12:12:25.74453932",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

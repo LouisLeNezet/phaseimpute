@@ -26,7 +26,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
                         "bcftools": "1.25"
@@ -35,7 +35,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_VIEW": {
                         "bcftools": "1.25"
@@ -262,11 +262,11 @@
                     "all_samples.batch0.id.txt:md5,2181a5165013a23885b1b8c986765963",
                     "all_samples.batch0.idonly.txt:md5,b8903a12c45a3a7d10a69ee27f502c87",
                     "all_samples.batch0.noid.txt:md5,3efb890bd71c27e79d736153c6870953",
-                    "dog_1735_chr21.bcftools_stats.txt:md5,a599d34b0d39174acea89e0dc085edf0",
-                    "dog_1735_chr22.bcftools_stats.txt:md5,75a471d34226b99959c22b8ced67e6ad",
-                    "dog_1735.glimpse1.bcftools_stats.txt:md5,470737fb4c91a2d3538be073466dadbc",
-                    "dog_1735.glimpse2.bcftools_stats.txt:md5,877409263beac77f7bdd92209a27c7f3",
-                    "dog_1735.quilt.bcftools_stats.txt:md5,4c7c23540dd225babb82840e9aba2e5d",
+                    "dog_1735_chr21.bcftools_stats.txt:md5,86f70bc392016c110c31895e37d8cc55",
+                    "dog_1735_chr22.bcftools_stats.txt:md5,3f00e748aea3382fd41f4c35e24b6797",
+                    "dog_1735.glimpse1.bcftools_stats.txt:md5,83f15a0ff131e0688127a4e3cd2bdacd",
+                    "dog_1735.glimpse2.bcftools_stats.txt:md5,b1e4d8ad41ba7a8d13874f1b66e63863",
+                    "dog_1735.quilt.bcftools_stats.txt:md5,04b30be55d5f57195b6b3a4de764560f",
                     "canFam3.s.fa.gz.fai:md5,631682a5849e271d84f3bf628418a6d7",
                     "canFam3.s.fa.gz.gzi:md5,b0a77162749742f3372b26e0b4f81565",
                     "bcftools-stats-subtypes.txt:md5,9397a3e17ce0d48f612401c6b5af1c07",
@@ -314,19 +314,19 @@
                     ],
                     [
                         "all_samples.annotate.vcf.gz",
-                        "80e1bf7f17b200934daa5e68670f4600"
+                        "dd6ec00a3f7e84b5a525955259ad7503"
                     ],
                     [
                         "all_samples.concat.vcf.gz",
-                        "352fc84d2b37e62d6ab8d829e0ce81c3"
+                        "a7e14460ad848cb9fe0ae44b22cb9322"
                     ],
                     [
                         "dog_1735_chr21.vcf.gz",
-                        "5d99610578ad526c26118b9301964434"
+                        "374633ee825b4d77f2a06ddf3c59209f"
                     ],
                     [
                         "dog_1735_chr22.vcf.gz",
-                        "40f9d0ac67ccb0e03540de765fffc51d"
+                        "d19cf6d091356dec5e29d887ebf54425"
                     ],
                     [
                         "all_samples.batch0.glimpse2.vcf.gz",
@@ -442,10 +442,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-06T10:22:13.70650217",
+        "timestamp": "2026-11-13T12:06:43.869772524",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     }
 }

@@ -20,7 +20,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "GAWK_IMPUTED": {
                         "gawk": "5.3.1"
@@ -139,9 +139,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.quilt2.bcftools_stats.txt:md5,764240dc8d060a232cc2f9e1d048a3fb",
-                    "NA19401.quilt2.bcftools_stats.txt:md5,319fec13929c123e74dac0db2186b468",
-                    "NA20359.quilt2.bcftools_stats.txt:md5,593343e7b2ae9b51bc7774095c6cb0da",
+                    "NA12878.quilt2.bcftools_stats.txt:md5,7e17ca5a2ccf31f1d6d233b4427965f1",
+                    "NA19401.quilt2.bcftools_stats.txt:md5,439e78f2b2227c2258bc11b8796a1c6b",
+                    "NA20359.quilt2.bcftools_stats.txt:md5,5ab1c396f1391014bd3d37ec010a0fe9",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,46f8e72c54af931bec43d50346e6c245",
@@ -214,10 +214,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-06T10:19:56.576202152",
+        "timestamp": "2026-11-13T12:48:26.580744247",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Check test_quilt2 - with map - with chunks": {
@@ -241,7 +241,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -379,9 +379,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.quilt2.bcftools_stats.txt:md5,764240dc8d060a232cc2f9e1d048a3fb",
-                    "NA19401.quilt2.bcftools_stats.txt:md5,319fec13929c123e74dac0db2186b468",
-                    "NA20359.quilt2.bcftools_stats.txt:md5,593343e7b2ae9b51bc7774095c6cb0da",
+                    "NA12878.quilt2.bcftools_stats.txt:md5,7e17ca5a2ccf31f1d6d233b4427965f1",
+                    "NA19401.quilt2.bcftools_stats.txt:md5,439e78f2b2227c2258bc11b8796a1c6b",
+                    "NA20359.quilt2.bcftools_stats.txt:md5,5ab1c396f1391014bd3d37ec010a0fe9",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -470,7 +470,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T14:04:57.157137862",
+        "timestamp": "2026-11-13T12:43:59.778382731",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

@@ -20,7 +20,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
                         "htslib": "1.25",
@@ -143,9 +143,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.quilt.bcftools_stats.txt:md5,ca99e46fc6a4b76ee47396b07664f861",
-                    "NA19401.quilt.bcftools_stats.txt:md5,17f18a5af11c51c902511588b96e0482",
-                    "NA20359.quilt.bcftools_stats.txt:md5,0905fc06908d4482a5f06e11a04a8ffb",
+                    "NA12878.quilt.bcftools_stats.txt:md5,83cf65aab9da24d37abda158d957fd1b",
+                    "NA19401.quilt.bcftools_stats.txt:md5,ef51181c3b14dd737ecaf7a0b604d0be",
+                    "NA20359.quilt.bcftools_stats.txt:md5,f9f39f253ee32c0817cc65506ab2dbcf",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,21bcf26940e91c117b1b35f5dff864d6",
@@ -218,10 +218,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-06T10:13:56.749479133",
+        "timestamp": "2026-11-13T12:38:45.38571129",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Check test_quilt - with map - with chunks": {
@@ -245,7 +245,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
                         "htslib": "1.25",
@@ -387,9 +387,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.quilt.bcftools_stats.txt:md5,ca99e46fc6a4b76ee47396b07664f861",
-                    "NA19401.quilt.bcftools_stats.txt:md5,17f18a5af11c51c902511588b96e0482",
-                    "NA20359.quilt.bcftools_stats.txt:md5,0905fc06908d4482a5f06e11a04a8ffb",
+                    "NA12878.quilt.bcftools_stats.txt:md5,83cf65aab9da24d37abda158d957fd1b",
+                    "NA19401.quilt.bcftools_stats.txt:md5,ef51181c3b14dd737ecaf7a0b604d0be",
+                    "NA20359.quilt.bcftools_stats.txt:md5,f9f39f253ee32c0817cc65506ab2dbcf",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -478,7 +478,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T14:01:25.370443494",
+        "timestamp": "2026-11-13T12:34:21.746557036",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

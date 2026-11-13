@@ -23,7 +23,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -146,9 +146,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.glimpse2.bcftools_stats.txt:md5,1359dbf365ac603e1aca680f69cf716d",
-                    "NA19401.glimpse2.bcftools_stats.txt:md5,5f2daa93858e1e9697d53aaa2ac33a16",
-                    "NA20359.glimpse2.bcftools_stats.txt:md5,f89c1f7fac1ff510ecb345f8234a4e5b",
+                    "NA12878.glimpse2.bcftools_stats.txt:md5,ff32f1d3423c0c5c0776867cd4af8c48",
+                    "NA19401.glimpse2.bcftools_stats.txt:md5,4335896ddaf8b04f1549240e58602a38",
+                    "NA20359.glimpse2.bcftools_stats.txt:md5,9adf0120a44b47bdcffd96f15fa91ba9",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -213,7 +213,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:50:55.366005122",
+        "timestamp": "2026-11-13T12:17:41.086962474",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"
@@ -243,7 +243,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "GAWK_IMPUTED": {
                         "gawk": "5.3.1"
@@ -351,9 +351,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.glimpse2.bcftools_stats.txt:md5,1359dbf365ac603e1aca680f69cf716d",
-                    "NA19401.glimpse2.bcftools_stats.txt:md5,5f2daa93858e1e9697d53aaa2ac33a16",
-                    "NA20359.glimpse2.bcftools_stats.txt:md5,f89c1f7fac1ff510ecb345f8234a4e5b",
+                    "NA12878.glimpse2.bcftools_stats.txt:md5,ff32f1d3423c0c5c0776867cd4af8c48",
+                    "NA19401.glimpse2.bcftools_stats.txt:md5,4335896ddaf8b04f1549240e58602a38",
+                    "NA20359.glimpse2.bcftools_stats.txt:md5,9adf0120a44b47bdcffd96f15fa91ba9",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,9c74a2688bd333bd9c9919476514258e",
@@ -410,10 +410,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-25T21:36:33.380916386",
+        "timestamp": "2026-11-13T12:19:14.452964005",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     }
 }
