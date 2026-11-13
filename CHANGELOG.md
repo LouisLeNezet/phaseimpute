@@ -74,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#316](https://github.com/nf-core/phaseimpute/pull/316) - Fix VCF support for `GLIMPSE2` imputation, publish samples split by default.
 - [#320](https://github.com/nf-core/phaseimpute/pull/320) - Use stricter extension check for `CHRCHECK`.
 - [#321](https://github.com/nf-core/phaseimpute/pull/321) - Remove `--ligate` option from `bcftools concat` (remove `PS` field).
+- [#331](https://github.com/nf-core/phaseimpute/pull/331) - Fix unittest errors with Nextflow 26.10.5 (`stdout` migration to `stderr`).
 
 ### `Dependencies`
 

@@ -1094,7 +1094,7 @@ nextflow_function {
         then {
             assertAll (
                 { assert function.failed },
-                { assert function.stdout.join('\n').contains(
+                { assert (function.stdout + function.stderr).join('\n').contains(
                     "You have not provided a posfile and you've requested to use the validation step with bam files."
                 ) }
             )
@@ -1139,7 +1139,7 @@ nextflow_function {
         then {
             assertAll (
                 { assert function.failed },
-                { assert function.stdout.join('\n').contains(
+                { assert (function.stdout + function.stderr).join('\n').contains(
                     'ERROR ~ Expected 3 columns in 1000GP.chr21.posfile.stitch, found 4 in line: chr21\t16570070\tC\tG.'
                 ) }
             )
@@ -1166,9 +1166,7 @@ nextflow_function {
         then {
             assertAll(
                 { assert function.success },
-                { assert snapshot(
-                    function.result
-                ).match() }
+                { assert snapshot(function.result).match() }
             )
         }
     }
@@ -1193,9 +1191,7 @@ nextflow_function {
         then {
             assertAll(
                 { assert function.success },
-                { assert snapshot(
-                    function.result
-                ).match() }
+                { assert snapshot(function.result).match() }
             )
         }
     }
@@ -1215,9 +1211,7 @@ nextflow_function {
         then {
             assertAll(
                 { assert function.success },
-                { assert snapshot(
-                    function.result
-                ).match() }
+                { assert snapshot(function.result).match() }
             )
         }
     }
