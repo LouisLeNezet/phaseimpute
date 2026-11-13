@@ -9,5 +9,6 @@ testing*
 null/
 .lineage/
 *.code-workspace
-.nf-test*
 *.xml.bkp
+.nf-test/
+.nf-test.log
