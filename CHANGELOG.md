@@ -55,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#323](https://github.com/nf-core/phaseimpute/pull/323) - Renamed output folder `prep_panel` to `panel_preparation`.
 - [#328](https://github.com/nf-core/phaseimpute/pull/328) - Update genetic map convertion module.
 - [#329](https://github.com/nf-core/phaseimpute/pull/329) - Update modules and subworkflows.
+- [#330](https://github.com/nf-core/phaseimpute/pull/330) - Update `BCFTOOLS_MPILEUP` and `BCFTOOLS_STATS` (md5sum changes).
 
 ### `Fixed`
 
