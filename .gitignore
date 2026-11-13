@@ -8,7 +8,5 @@ testing*
 *.pyc
 null/
 .lineage/
-*.code-workspace
-*.xml.bkp
 .nf-test/
 .nf-test.log
