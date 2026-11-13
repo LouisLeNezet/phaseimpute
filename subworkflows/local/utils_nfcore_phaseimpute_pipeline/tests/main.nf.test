@@ -119,7 +119,7 @@ nextflow_workflow {
         then {
             assertAll(
                 { assert workflow.success },
-                { assert workflow.stdout.contains("WARN: The following contigs are absent from at least one file : [chr2] and therefore won't be used")}
+                { assert (workflow.stdout + workflow.stderr).contains("WARN: The following contigs are absent from at least one file : [chr2] and therefore won't be used")}
             )
         }
     }
@@ -178,7 +178,7 @@ nextflow_workflow {
         then {
             assertAll(
                 { assert workflow.success },
-                { assert workflow.stdout.contains("WARN: The following contigs are absent from at least one file : [chr2] and therefore won't be used")},
+                { assert (workflow.stdout + workflow.stderr).contains("WARN: The following contigs are absent from at least one file : [chr2] and therefore won't be used")},
                 { assert snapshot(sanitizeOutput(workflow.out)).match()}
             )
         }
@@ -238,7 +238,7 @@ nextflow_workflow {
         then {
             assertAll(
                 { assert workflow.failed },
-                { assert workflow.errorMessage.contains("Multiple panel IDs detected: [1000GP, 1000GP_2]. Please provide only one across panel, chunks and posfile.")}
+                { assert (workflow.stdout + workflow.stderr).contains("Multiple panel IDs detected: [1000GP, 1000GP_2]. Please provide only one across panel, chunks and posfile.")}
             )
         }
     }
@@ -297,7 +297,7 @@ nextflow_workflow {
         then {
             assertAll(
                 { assert workflow.success },
-                { assert workflow.stdout.contains("WARN: No panel IDs detected. Channel panel, chunks and posfile will be initialise with null values and `panel_id`: None.")},
+                { assert (workflow.stdout + workflow.stderr).contains("WARN: No panel IDs detected. Channel panel, chunks and posfile will be initialise with null values and `panel_id`: None.")},
                 { assert snapshot(sanitizeOutput(workflow.out)).match()}
             )
         }
