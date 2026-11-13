@@ -107,7 +107,7 @@ nextflow_workflow {
         then {
             assertAll(
                 { assert workflow.failed },
-                { assert workflow.stdout.any { line -> line.contains("Reference genome FASTA file not found") } }
+                { assert (workflow.stdout + workflow.stderr).any { line -> line.contains("Reference genome FASTA file not found") } }
             )
         }
     }
