@@ -8,28 +8,28 @@
                         "samtools": "1.23"
                     },
                     "BCFTOOLS_ANNOTATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_CONCAT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_LIGATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_PHASE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MERGE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
                         "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_IMPUTED": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
                         "bcftools": "1.23.1"
@@ -44,14 +44,14 @@
                         "glimpse": "1.1.1"
                     },
                     "HTSLIB_BGZIPTABIX": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "LISTTOFILE": {
                         "gawk": "5.3.1"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "VCFCHREXTRACT": {
                         "bcftools": "1.22"
@@ -307,28 +307,28 @@
                         "samtools": "1.23"
                     },
                     "BCFTOOLS_ANNOTATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_CONCAT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_LIGATE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_INDEX_PHASE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MERGE": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
                         "bcftools": "1.23.1"
                     },
                     "BCFTOOLS_PLUGINSPLIT": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_QUERY_IMPUTED": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
                         "bcftools": "1.23.1"
@@ -349,14 +349,14 @@
                         "glimpse": "1.1.1"
                     },
                     "HTSLIB_BGZIPTABIX": {
-                        "htslib": "1.23.1",
+                        "htslib": "1.25",
                         "xz": "5.8.3"
                     },
                     "LISTTOFILE": {
                         "gawk": "5.3.1"
                     },
                     "SAMTOOLS_FAIDX": {
-                        "samtools": "1.23.1"
+                        "samtools": "1.25"
                     },
                     "VCFCHREXTRACT": {
                         "bcftools": "1.22"

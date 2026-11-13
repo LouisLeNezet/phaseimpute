@@ -19,7 +19,11 @@ workflow VCF_SITES_EXTRACT_BCFTOOLS {
     BCFTOOLS_VIEW(ch_vcf, [], [], [])
 
     // Transform posfile to TSV with ','
-    GAWK(BCFTOOLS_CONVERT.out.legend, [], false)
+    GAWK(
+        BCFTOOLS_CONVERT.out.legend
+            .map { meta, legend -> [meta, legend, "txt"] },
+        [], false
+    )
 
     // Compress TSV
     HTSLIB_BGZIPTABIX(

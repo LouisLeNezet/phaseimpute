@@ -21,10 +21,10 @@
                         "NA12878.rsquare.grp.txt.gz:md5,4e2d341610d908d3f78685388f7d41b8"
                     ],
                     [
-                        "NA12878.txt:md5,b9c53f1ad2c5fc5243ccbddb4a8b4260"
+                        "NA12878.txt.gz:md5,b9c53f1ad2c5fc5243ccbddb4a8b4260"
                     ],
                     [
-                        "NA12878.txt:md5,e7b0730fba0dc331de80ed911fcb6dcf"
+                        "NA12878.txt.gz:md5,e7b0730fba0dc331de80ed911fcb6dcf"
                     ],
                     [
                         "NA19401.error.cal.txt.gz:md5,46a6d42d469328096a66b8b172bce6d7"
@@ -36,10 +36,10 @@
                         "NA19401.rsquare.grp.txt.gz:md5,8161d852ad5a77d5b83236960497cfe1"
                     ],
                     [
-                        "NA19401.txt:md5,efd6bd3bf0c5530f0cf9b5ad055abe49"
+                        "NA19401.txt.gz:md5,efd6bd3bf0c5530f0cf9b5ad055abe49"
                     ],
                     [
-                        "NA19401.txt:md5,fb9ff57181626f06a1947b62ad18f97d"
+                        "NA19401.txt.gz:md5,fb9ff57181626f06a1947b62ad18f97d"
                     ]
                 ],
                 "multiqc_files": [
@@ -53,10 +53,10 @@
                         "NA12878.rsquare.grp.txt.gz:md5,4e2d341610d908d3f78685388f7d41b8"
                     ],
                     [
-                        "NA12878.txt:md5,b9c53f1ad2c5fc5243ccbddb4a8b4260"
+                        "NA12878.txt.gz:md5,b9c53f1ad2c5fc5243ccbddb4a8b4260"
                     ],
                     [
-                        "NA12878.txt:md5,e7b0730fba0dc331de80ed911fcb6dcf"
+                        "NA12878.txt.gz:md5,e7b0730fba0dc331de80ed911fcb6dcf"
                     ],
                     [
                         "NA19401.error.cal.txt.gz:md5,46a6d42d469328096a66b8b172bce6d7"
@@ -68,10 +68,10 @@
                         "NA19401.rsquare.grp.txt.gz:md5,8161d852ad5a77d5b83236960497cfe1"
                     ],
                     [
-                        "NA19401.txt:md5,efd6bd3bf0c5530f0cf9b5ad055abe49"
+                        "NA19401.txt.gz:md5,efd6bd3bf0c5530f0cf9b5ad055abe49"
                     ],
                     [
-                        "NA19401.txt:md5,fb9ff57181626f06a1947b62ad18f97d"
+                        "NA19401.txt.gz:md5,fb9ff57181626f06a1947b62ad18f97d"
                     ]
                 ],
                 "stats": [
@@ -84,10 +84,10 @@
                 ]
             }
         ],
-        "timestamp": "2026-03-03T11:25:47.131150387",
+        "timestamp": "2026-11-12T14:15:34.809271301",
         "meta": {
-            "nf-test": "0.9.4",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.10.5"
         }
     }
 }
