@@ -41,7 +41,7 @@
                     },
                     "bcftools/mpileup": {
                         "branch": "master",
-                        "git_sha": "140a5c4d654dfb1e609334d2543bdfe22f8288db",
+                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
                         "installed_by": ["bam_variant_calling_mpileup_bcftools"]
                     },
                     "bcftools/norm": {
@@ -76,7 +76,7 @@
                     },
                     "bcftools/stats": {
                         "branch": "master",
-                        "git_sha": "feef37435aea56816adf4b3bde1fc76aac327a8d",
+                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
                         "installed_by": ["modules"]
                     },
                     "bcftools/view": {
@@ -153,7 +153,7 @@
                     },
                     "htslib/bgziptabix": {
                         "branch": "master",
-                        "git_sha": "0fc371314e7612fa13b8164bd86b53683a59a8f0",
+                        "git_sha": "e316df2a11df4c74988d68a1147878d76c5972a0",
                         "installed_by": ["modules", "vcf_gather_bcftools"]
                     },
                     "minimac4/compressref": {
