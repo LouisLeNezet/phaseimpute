@@ -17,10 +17,10 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_PANEL": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -227,13 +227,13 @@
                     "multiqc_general_stats.txt:md5,07f5ebe79055238bfcdd6fe2dae5e213",
                     "multiqc_glimpse_err_grp.txt:md5,91738f447116e750a356c3d74b47ff42",
                     "multiqc_glimpse_err_spl.txt:md5,dcef407887aa18cc564883fa46a7da19",
-                    "1000GP.panel.bcftools_stats.txt:md5,d01ec3426d5dda525b21da1c62a6c6fd",
+                    "1000GP.panel.bcftools_stats.txt:md5,1c687629c29b34fdc1aa869cf26a59b8",
                     "AllSamples.txt:md5,8e84c088b83ca17b6d72443f25fff35a",
-                    "NA12878.truth.bcftools_stats.txt:md5,4e8153cc6be1b8ebe1a460be78ef252f",
+                    "NA12878.truth.bcftools_stats.txt:md5,276bc620d58c0f034a9d83187d54ac37",
                     "NA12878_SNP.txt:md5,88996cab2016d66d2275a4a863515286",
-                    "NA19401.truth.bcftools_stats.txt:md5,acde3c70c921f7fa2f98f8d5463b43b7",
+                    "NA19401.truth.bcftools_stats.txt:md5,b7c49c20379e1f9a025370b0a68cca03",
                     "NA19401_SNP.txt:md5,518ba241a4f9ac3aeee06754e64063ee",
-                    "NA20359.truth.bcftools_stats.txt:md5,cef8ca0e4df2d9768077eaf4c88df6e6",
+                    "NA20359.truth.bcftools_stats.txt:md5,441f762f47c6b19413ceb56fcfc4ca54",
                     "NA20359_SNP.txt:md5,6a701caafb156d43f62c4dcea58ffcc4"
                 ],
                 "BAM files": [
@@ -262,7 +262,7 @@
                 ]
             }
         ],
-        "timestamp": "2026-11-12T14:01:18.231718651",
+        "timestamp": "2026-11-13T12:54:53.57581963",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

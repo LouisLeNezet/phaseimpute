@@ -23,7 +23,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
                         "htslib": "1.25",
@@ -152,9 +152,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.stitch.bcftools_stats.txt:md5,24d54d3ffba3fed39f7824abbf9a7d81",
-                    "NA19401.stitch.bcftools_stats.txt:md5,360b697eac096a9b0ae2cc1059659418",
-                    "NA20359.stitch.bcftools_stats.txt:md5,6d62a564c7fead78240007ac90bc8e3b",
+                    "NA12878.stitch.bcftools_stats.txt:md5,e3ca8587cf2096d290119e4ddef05cfd",
+                    "NA19401.stitch.bcftools_stats.txt:md5,401f8e6b831b355a590830e7fcb1a20d",
+                    "NA20359.stitch.bcftools_stats.txt:md5,34656ddca6e9fdb7e9675f69fa725e1b",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -219,7 +219,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T14:08:59.198384502",
+        "timestamp": "2026-11-13T12:52:42.407645138",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"
@@ -249,7 +249,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BGZIP_POSFILE_IMPUTE": {
                         "htslib": "1.25",
@@ -363,9 +363,9 @@
                     "all_samples.batch0.id.txt:md5,19595d0c2ee3d3d4e0db213e4469dac6",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,2b87699e9ed5101bc2addb7596cf16c7",
-                    "NA12878.stitch.bcftools_stats.txt:md5,24d54d3ffba3fed39f7824abbf9a7d81",
-                    "NA19401.stitch.bcftools_stats.txt:md5,360b697eac096a9b0ae2cc1059659418",
-                    "NA20359.stitch.bcftools_stats.txt:md5,6d62a564c7fead78240007ac90bc8e3b",
+                    "NA12878.stitch.bcftools_stats.txt:md5,e3ca8587cf2096d290119e4ddef05cfd",
+                    "NA19401.stitch.bcftools_stats.txt:md5,401f8e6b831b355a590830e7fcb1a20d",
+                    "NA20359.stitch.bcftools_stats.txt:md5,34656ddca6e9fdb7e9675f69fa725e1b",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,20f016802c19197bd01da87b5bebf585",
@@ -422,10 +422,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-25T21:47:21.826420602",
+        "timestamp": "2026-11-13T12:53:46.882946332",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     }
 }

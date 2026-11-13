@@ -32,7 +32,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_NORM": {
                         "bcftools": "1.25"
@@ -50,13 +50,13 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_PANEL": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_VIEW": {
                         "bcftools": "1.25"
@@ -548,24 +548,24 @@
                     "all_samples.batch0.id.txt:md5,a4c01a39309f9522d5b01108e3b75c64",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,276f71c6daa405e34b4b88783aeef913",
-                    "NA12878_chr21.bcftools_stats.txt:md5,31f455bdad216fc532744c70c003b367",
-                    "NA12878_chr22.bcftools_stats.txt:md5,de2d69ed3c6b84939f42389caf3ff89c",
-                    "NA19401_chr21.bcftools_stats.txt:md5,25f10bf15228c746d2874ab12dfcc0a2",
-                    "NA19401_chr22.bcftools_stats.txt:md5,d5f7883e248c9362b749c482722e22c9",
-                    "NA20359_chr21.bcftools_stats.txt:md5,ab48d1c2dc3f128a21d4b78ca8211738",
-                    "NA20359_chr22.bcftools_stats.txt:md5,4755c511cf3a5dd090b560f526f25749",
-                    "NA12878.glimpse1.bcftools_stats.txt:md5,ef6b20f1b0bec03c7ac61375a5474119",
-                    "NA12878.glimpse2.bcftools_stats.txt:md5,1359dbf365ac603e1aca680f69cf716d",
-                    "NA12878.quilt.bcftools_stats.txt:md5,ca99e46fc6a4b76ee47396b07664f861",
-                    "NA12878.stitch.bcftools_stats.txt:md5,24d54d3ffba3fed39f7824abbf9a7d81",
-                    "NA19401.glimpse1.bcftools_stats.txt:md5,2920962fbdd91e31850baa9be89dd912",
-                    "NA19401.glimpse2.bcftools_stats.txt:md5,5f2daa93858e1e9697d53aaa2ac33a16",
-                    "NA19401.quilt.bcftools_stats.txt:md5,17f18a5af11c51c902511588b96e0482",
-                    "NA19401.stitch.bcftools_stats.txt:md5,360b697eac096a9b0ae2cc1059659418",
-                    "NA20359.glimpse1.bcftools_stats.txt:md5,726b11871cf8e4223e11b9ef820f5279",
-                    "NA20359.glimpse2.bcftools_stats.txt:md5,f89c1f7fac1ff510ecb345f8234a4e5b",
-                    "NA20359.quilt.bcftools_stats.txt:md5,0905fc06908d4482a5f06e11a04a8ffb",
-                    "NA20359.stitch.bcftools_stats.txt:md5,6d62a564c7fead78240007ac90bc8e3b",
+                    "NA12878_chr21.bcftools_stats.txt:md5,e827f12a3434c9720398743a1ff3ca08",
+                    "NA12878_chr22.bcftools_stats.txt:md5,4470aa8dc84d2d0a968b2fbb25c67449",
+                    "NA19401_chr21.bcftools_stats.txt:md5,01723436482edc4f244becac86d9ab0e",
+                    "NA19401_chr22.bcftools_stats.txt:md5,07857b8768f4981fbc8b5d9fe5e2ccb0",
+                    "NA20359_chr21.bcftools_stats.txt:md5,1286fb228e1c5c7f5c2d6157c05b9b1f",
+                    "NA20359_chr22.bcftools_stats.txt:md5,a2f54b5bbcde474c70e091f5a91ab3ea",
+                    "NA12878.glimpse1.bcftools_stats.txt:md5,40ee749696fa64594e90522f662033ab",
+                    "NA12878.glimpse2.bcftools_stats.txt:md5,ff32f1d3423c0c5c0776867cd4af8c48",
+                    "NA12878.quilt.bcftools_stats.txt:md5,83cf65aab9da24d37abda158d957fd1b",
+                    "NA12878.stitch.bcftools_stats.txt:md5,e3ca8587cf2096d290119e4ddef05cfd",
+                    "NA19401.glimpse1.bcftools_stats.txt:md5,a972282683c7b4b0cf955f201c9fd8b9",
+                    "NA19401.glimpse2.bcftools_stats.txt:md5,4335896ddaf8b04f1549240e58602a38",
+                    "NA19401.quilt.bcftools_stats.txt:md5,ef51181c3b14dd737ecaf7a0b604d0be",
+                    "NA19401.stitch.bcftools_stats.txt:md5,401f8e6b831b355a590830e7fcb1a20d",
+                    "NA20359.glimpse1.bcftools_stats.txt:md5,179aecbbcd507d15cf11acc37c43a498",
+                    "NA20359.glimpse2.bcftools_stats.txt:md5,9adf0120a44b47bdcffd96f15fa91ba9",
+                    "NA20359.quilt.bcftools_stats.txt:md5,f9f39f253ee32c0817cc65506ab2dbcf",
+                    "NA20359.stitch.bcftools_stats.txt:md5,34656ddca6e9fdb7e9675f69fa725e1b",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,30837458e3113f0dd225e3255f3f60ec",
@@ -607,7 +607,7 @@
                     "1000GP.chr22.posfile.txt.gz:md5,f5997df5995dcdbc4ab31e1084b83541",
                     "1000GP.chr21.posfile.txt:md5,33d064c5132000799f3df9ea31967e12",
                     "1000GP.chr22.posfile.txt:md5,f5997df5995dcdbc4ab31e1084b83541",
-                    "1000GP.panel.bcftools_stats.txt:md5,d01ec3426d5dda525b21da1c62a6c6fd",
+                    "1000GP.panel.bcftools_stats.txt:md5,1c687629c29b34fdc1aa869cf26a59b8",
                     "NA12878_Rchr21_16570000-16610000.depth.txt:md5,fb55f61edadffaa8ac43d0ab72396162",
                     "NA12878_Rchr22_16570000-16610000.depth.txt:md5,5e5c433cc8a514a2c7e78077b072f04d",
                     "NA19401_Rchr21_16570000-16610000.depth.txt:md5,5b5fbaf1b8a9645ab2e9d34891ae165a",
@@ -615,17 +615,17 @@
                     "NA20359_Rchr21_16570000-16610000.depth.txt:md5,0a7e96e3f9b19ccfe23c48afd75b06de",
                     "NA20359_Rchr22_16570000-16610000.depth.txt:md5,b889ccb75e60c8bc1b0fa783153aa845",
                     "AllSamples.txt:md5,aa75e162b8f75baa1c36b1a0068db4f5",
-                    "NA12878.truth.bcftools_stats.txt:md5,f7e940f7d822c519eff426aa316e9c51",
+                    "NA12878.truth.bcftools_stats.txt:md5,b52f2d149656431723c29a51adb15ce8",
                     "NA12878_P1000GP_Tglimpse1_SNP.txt:md5,e3a48cc0c24fdbc5655f8f0c5a8aa716",
                     "NA12878_P1000GP_Tglimpse2_SNP.txt:md5,103f283991d98ff1c638ab789695e06e",
                     "NA12878_P1000GP_Tquilt_SNP.txt:md5,bf358e891cd01e38c025da90563532a3",
                     "NA12878_P1000GP_Tstitch_SNP.txt:md5,52ac05052c01a90c8719051ce53da342",
-                    "NA19401.truth.bcftools_stats.txt:md5,74a6c16b24adff3aae779946866e1a1f",
+                    "NA19401.truth.bcftools_stats.txt:md5,de55562361d000815b2c5252985fdee6",
                     "NA19401_P1000GP_Tglimpse1_SNP.txt:md5,56b0859431f43e0227b8782ba91146af",
                     "NA19401_P1000GP_Tglimpse2_SNP.txt:md5,8026eb44d833dde5b16fb94a92d0c59c",
                     "NA19401_P1000GP_Tquilt_SNP.txt:md5,b204b1186dcf49782514943a6b0d1c8a",
                     "NA19401_P1000GP_Tstitch_SNP.txt:md5,b65f6959536c3f07ac51969532cb74e2",
-                    "NA20359.truth.bcftools_stats.txt:md5,a17a4fe97555879bc74336fb71f18cbe",
+                    "NA20359.truth.bcftools_stats.txt:md5,2ac2f5642a674284ae46689e6b7f145e",
                     "NA20359_P1000GP_Tglimpse1_SNP.txt:md5,59211f61f5425c79394cc97a115305c2",
                     "NA20359_P1000GP_Tglimpse2_SNP.txt:md5,48c7b5c1bad0e4d1275a1aa45327d187",
                     "NA20359_P1000GP_Tquilt_SNP.txt:md5,3fc0332b887b12ed0a4a9ddeb32f6760",
@@ -708,11 +708,11 @@
                     ],
                     [
                         "NA12878_chr21.vcf.gz",
-                        "c34762119666fb13776d7161115b2a25"
+                        "596837f6b85725be653378593364b81f"
                     ],
                     [
                         "NA12878_chr22.vcf.gz",
-                        "27f13bcd3deada075c422655b9131696"
+                        "6aa420e3cbbe312f2527470a0605a321"
                     ],
                     [
                         "NA19401_chr21.vcf.gz",
@@ -720,31 +720,31 @@
                     ],
                     [
                         "NA19401_chr22.vcf.gz",
-                        "94dab8f6d625f4fb4859084f277045f8"
+                        "d05fa9792b318bdcd12fa6ee89a1f0c1"
                     ],
                     [
                         "NA20359_chr21.vcf.gz",
-                        "ac4a3e32fe41df6e07367f84bcf84cb"
+                        "e4d72717183795db74b13592fb2dd2a3"
                     ],
                     [
                         "NA20359_chr22.vcf.gz",
-                        "8e70c2f86c3e494d045cd5ab918b7957"
+                        "39fd5e8c166783a1af66f82449a337a0"
                     ],
                     [
                         "all_samples.annotate.vcf.gz",
-                        "51f2cc6d9f6bc07a84f80fc383a9591b"
+                        "b7cf12bb99d5d3309fea07e0e10a58fa"
                     ],
                     [
                         "all_samples.concat.vcf.gz",
-                        "b7462d49e06ec5be6359fa537d18ab68"
+                        "bf89bff623e0834c4e11b099e18b0b3a"
                     ],
                     [
                         "all_samples_chr21.merge.vcf.gz",
-                        "5d4cbe4aa1bc251f647ee677dade25f7"
+                        "1ea9064a9a170dc42f4a1242a95ebbeb"
                     ],
                     [
                         "all_samples_chr22.merge.vcf.gz",
-                        "ba600cdc627323fedcd219949edd3067"
+                        "515a1308640f2a0ba0faa0e0bd52e43e"
                     ],
                     [
                         "all_samples.batch0.glimpse2.vcf.gz",
@@ -848,19 +848,19 @@
                     ],
                     [
                         "all_samples.truth.vcf.gz",
-                        "26e9aafb2e52ec650b83df2fb1c1b2a3"
+                        "2693e89349f475a8b0d95bccd5b71eff"
                     ],
                     [
                         "NA12878.truth.vcf.gz",
-                        "b09cd2b7f732abeb7b53b79a51bc1ca7"
+                        "4150d504ee0bb9aa415a613d9a6a1af6"
                     ],
                     [
                         "NA19401.truth.vcf.gz",
-                        "8654a2b292ca3193e19f5c022031cb8"
+                        "5db2cb6bdb415d3ee2a1cd7701f6707a"
                     ],
                     [
                         "NA20359.truth.vcf.gz",
-                        "42a61e3b656990a82bc4ad4b904dbd9d"
+                        "d1010d8ad36464cd01e4d76e9a94c043"
                     ]
                 ],
                 "CSV files": [
@@ -952,7 +952,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:36:50.502596524",
+        "timestamp": "2026-11-13T12:01:12.604036765",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"
@@ -991,7 +991,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_MPILEUP": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_NORM": {
                         "bcftools": "1.25"
@@ -1009,13 +1009,13 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_PANEL": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TRUTH": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "BCFTOOLS_VIEW": {
                         "bcftools": "1.25"
@@ -1522,24 +1522,24 @@
                     "all_samples.batch0.id.txt:md5,a4c01a39309f9522d5b01108e3b75c64",
                     "all_samples.batch0.idonly.txt:md5,b16baeecc412602ee233e14bcbe592b7",
                     "all_samples.batch0.noid.txt:md5,276f71c6daa405e34b4b88783aeef913",
-                    "NA12878_chr21.bcftools_stats.txt:md5,31f455bdad216fc532744c70c003b367",
-                    "NA12878_chr22.bcftools_stats.txt:md5,de2d69ed3c6b84939f42389caf3ff89c",
-                    "NA19401_chr21.bcftools_stats.txt:md5,25f10bf15228c746d2874ab12dfcc0a2",
-                    "NA19401_chr22.bcftools_stats.txt:md5,d5f7883e248c9362b749c482722e22c9",
-                    "NA20359_chr21.bcftools_stats.txt:md5,ab48d1c2dc3f128a21d4b78ca8211738",
-                    "NA20359_chr22.bcftools_stats.txt:md5,4755c511cf3a5dd090b560f526f25749",
-                    "NA12878.glimpse1.bcftools_stats.txt:md5,ef6b20f1b0bec03c7ac61375a5474119",
-                    "NA12878.glimpse2.bcftools_stats.txt:md5,1359dbf365ac603e1aca680f69cf716d",
-                    "NA12878.quilt.bcftools_stats.txt:md5,ca99e46fc6a4b76ee47396b07664f861",
-                    "NA12878.stitch.bcftools_stats.txt:md5,24d54d3ffba3fed39f7824abbf9a7d81",
-                    "NA19401.glimpse1.bcftools_stats.txt:md5,2920962fbdd91e31850baa9be89dd912",
-                    "NA19401.glimpse2.bcftools_stats.txt:md5,5f2daa93858e1e9697d53aaa2ac33a16",
-                    "NA19401.quilt.bcftools_stats.txt:md5,17f18a5af11c51c902511588b96e0482",
-                    "NA19401.stitch.bcftools_stats.txt:md5,360b697eac096a9b0ae2cc1059659418",
-                    "NA20359.glimpse1.bcftools_stats.txt:md5,726b11871cf8e4223e11b9ef820f5279",
-                    "NA20359.glimpse2.bcftools_stats.txt:md5,f89c1f7fac1ff510ecb345f8234a4e5b",
-                    "NA20359.quilt.bcftools_stats.txt:md5,0905fc06908d4482a5f06e11a04a8ffb",
-                    "NA20359.stitch.bcftools_stats.txt:md5,6d62a564c7fead78240007ac90bc8e3b",
+                    "NA12878_chr21.bcftools_stats.txt:md5,e827f12a3434c9720398743a1ff3ca08",
+                    "NA12878_chr22.bcftools_stats.txt:md5,4470aa8dc84d2d0a968b2fbb25c67449",
+                    "NA19401_chr21.bcftools_stats.txt:md5,01723436482edc4f244becac86d9ab0e",
+                    "NA19401_chr22.bcftools_stats.txt:md5,07857b8768f4981fbc8b5d9fe5e2ccb0",
+                    "NA20359_chr21.bcftools_stats.txt:md5,1286fb228e1c5c7f5c2d6157c05b9b1f",
+                    "NA20359_chr22.bcftools_stats.txt:md5,a2f54b5bbcde474c70e091f5a91ab3ea",
+                    "NA12878.glimpse1.bcftools_stats.txt:md5,40ee749696fa64594e90522f662033ab",
+                    "NA12878.glimpse2.bcftools_stats.txt:md5,ff32f1d3423c0c5c0776867cd4af8c48",
+                    "NA12878.quilt.bcftools_stats.txt:md5,83cf65aab9da24d37abda158d957fd1b",
+                    "NA12878.stitch.bcftools_stats.txt:md5,e3ca8587cf2096d290119e4ddef05cfd",
+                    "NA19401.glimpse1.bcftools_stats.txt:md5,a972282683c7b4b0cf955f201c9fd8b9",
+                    "NA19401.glimpse2.bcftools_stats.txt:md5,4335896ddaf8b04f1549240e58602a38",
+                    "NA19401.quilt.bcftools_stats.txt:md5,ef51181c3b14dd737ecaf7a0b604d0be",
+                    "NA19401.stitch.bcftools_stats.txt:md5,401f8e6b831b355a590830e7fcb1a20d",
+                    "NA20359.glimpse1.bcftools_stats.txt:md5,179aecbbcd507d15cf11acc37c43a498",
+                    "NA20359.glimpse2.bcftools_stats.txt:md5,9adf0120a44b47bdcffd96f15fa91ba9",
+                    "NA20359.quilt.bcftools_stats.txt:md5,f9f39f253ee32c0817cc65506ab2dbcf",
+                    "NA20359.stitch.bcftools_stats.txt:md5,34656ddca6e9fdb7e9675f69fa725e1b",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -1589,7 +1589,7 @@
                     "1000GP.chr22.posfile.txt.gz:md5,f5997df5995dcdbc4ab31e1084b83541",
                     "1000GP.chr21.posfile.txt:md5,33d064c5132000799f3df9ea31967e12",
                     "1000GP.chr22.posfile.txt:md5,f5997df5995dcdbc4ab31e1084b83541",
-                    "1000GP.panel.bcftools_stats.txt:md5,d01ec3426d5dda525b21da1c62a6c6fd",
+                    "1000GP.panel.bcftools_stats.txt:md5,1c687629c29b34fdc1aa869cf26a59b8",
                     "NA12878_Rchr21_16570000-16610000.depth.txt:md5,fb55f61edadffaa8ac43d0ab72396162",
                     "NA12878_Rchr22_16570000-16610000.depth.txt:md5,5e5c433cc8a514a2c7e78077b072f04d",
                     "NA19401_Rchr21_16570000-16610000.depth.txt:md5,5b5fbaf1b8a9645ab2e9d34891ae165a",
@@ -1597,17 +1597,17 @@
                     "NA20359_Rchr21_16570000-16610000.depth.txt:md5,0a7e96e3f9b19ccfe23c48afd75b06de",
                     "NA20359_Rchr22_16570000-16610000.depth.txt:md5,b889ccb75e60c8bc1b0fa783153aa845",
                     "AllSamples.txt:md5,8d67ea8c951acf2315cebec1201a6c66",
-                    "NA12878.truth.bcftools_stats.txt:md5,f7e940f7d822c519eff426aa316e9c51",
+                    "NA12878.truth.bcftools_stats.txt:md5,b52f2d149656431723c29a51adb15ce8",
                     "NA12878_P1000GP_Tglimpse1_SNP.txt:md5,f41e6881684f0166a55c866ee9ee4848",
                     "NA12878_P1000GP_Tglimpse2_SNP.txt:md5,1986c65e307a9b014f113ddb45cc143b",
                     "NA12878_P1000GP_Tquilt_SNP.txt:md5,62c5c22d3c224dc04cc79b0147bb1ed1",
                     "NA12878_P1000GP_Tstitch_SNP.txt:md5,09ac6ca5295d1047fe08518e4a9e3c28",
-                    "NA19401.truth.bcftools_stats.txt:md5,74a6c16b24adff3aae779946866e1a1f",
+                    "NA19401.truth.bcftools_stats.txt:md5,de55562361d000815b2c5252985fdee6",
                     "NA19401_P1000GP_Tglimpse1_SNP.txt:md5,c140a6f52c35aac0c1c6ba8ed83d225f",
                     "NA19401_P1000GP_Tglimpse2_SNP.txt:md5,13abdd48e99ba76363e5582e531e58c0",
                     "NA19401_P1000GP_Tquilt_SNP.txt:md5,ddfc59a3e51ede8ecb0e4acf1b183ab8",
                     "NA19401_P1000GP_Tstitch_SNP.txt:md5,b65f6959536c3f07ac51969532cb74e2",
-                    "NA20359.truth.bcftools_stats.txt:md5,a17a4fe97555879bc74336fb71f18cbe",
+                    "NA20359.truth.bcftools_stats.txt:md5,2ac2f5642a674284ae46689e6b7f145e",
                     "NA20359_P1000GP_Tglimpse1_SNP.txt:md5,ab907cc60fcc1dcd7f4658ff4470224f",
                     "NA20359_P1000GP_Tglimpse2_SNP.txt:md5,5de75f0642c91a7094382bfbf3b83ed5",
                     "NA20359_P1000GP_Tquilt_SNP.txt:md5,291db1ffabf4378f7ea3cc6b77bf4c6a",
@@ -1690,11 +1690,11 @@
                     ],
                     [
                         "NA12878_chr21.vcf.gz",
-                        "c34762119666fb13776d7161115b2a25"
+                        "596837f6b85725be653378593364b81f"
                     ],
                     [
                         "NA12878_chr22.vcf.gz",
-                        "27f13bcd3deada075c422655b9131696"
+                        "6aa420e3cbbe312f2527470a0605a321"
                     ],
                     [
                         "NA19401_chr21.vcf.gz",
@@ -1702,31 +1702,31 @@
                     ],
                     [
                         "NA19401_chr22.vcf.gz",
-                        "94dab8f6d625f4fb4859084f277045f8"
+                        "d05fa9792b318bdcd12fa6ee89a1f0c1"
                     ],
                     [
                         "NA20359_chr21.vcf.gz",
-                        "ac4a3e32fe41df6e07367f84bcf84cb"
+                        "e4d72717183795db74b13592fb2dd2a3"
                     ],
                     [
                         "NA20359_chr22.vcf.gz",
-                        "8e70c2f86c3e494d045cd5ab918b7957"
+                        "39fd5e8c166783a1af66f82449a337a0"
                     ],
                     [
                         "all_samples.annotate.vcf.gz",
-                        "51f2cc6d9f6bc07a84f80fc383a9591b"
+                        "b7cf12bb99d5d3309fea07e0e10a58fa"
                     ],
                     [
                         "all_samples.concat.vcf.gz",
-                        "b7462d49e06ec5be6359fa537d18ab68"
+                        "bf89bff623e0834c4e11b099e18b0b3a"
                     ],
                     [
                         "all_samples_chr21.merge.vcf.gz",
-                        "5d4cbe4aa1bc251f647ee677dade25f7"
+                        "1ea9064a9a170dc42f4a1242a95ebbeb"
                     ],
                     [
                         "all_samples_chr22.merge.vcf.gz",
-                        "ba600cdc627323fedcd219949edd3067"
+                        "515a1308640f2a0ba0faa0e0bd52e43e"
                     ],
                     [
                         "all_samples.batch0.glimpse2.vcf.gz",
@@ -1830,19 +1830,19 @@
                     ],
                     [
                         "all_samples.truth.vcf.gz",
-                        "26e9aafb2e52ec650b83df2fb1c1b2a3"
+                        "2693e89349f475a8b0d95bccd5b71eff"
                     ],
                     [
                         "NA12878.truth.vcf.gz",
-                        "b09cd2b7f732abeb7b53b79a51bc1ca7"
+                        "4150d504ee0bb9aa415a613d9a6a1af6"
                     ],
                     [
                         "NA19401.truth.vcf.gz",
-                        "8654a2b292ca3193e19f5c022031cb8"
+                        "5db2cb6bdb415d3ee2a1cd7701f6707a"
                     ],
                     [
                         "NA20359.truth.vcf.gz",
-                        "42a61e3b656990a82bc4ad4b904dbd9d"
+                        "d1010d8ad36464cd01e4d76e9a94c043"
                     ]
                 ],
                 "CSV files": [
@@ -1934,7 +1934,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-12T12:31:37.474875039",
+        "timestamp": "2026-11-13T11:59:12.895252919",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

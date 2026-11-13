@@ -20,7 +20,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "GAWK_IMPUTED": {
                         "gawk": "5.3.1"
@@ -125,9 +125,9 @@
                     "pipeline_info/nf_core_phaseimpute_software_mqc_versions.yml"
                 ],
                 "stable path": [
-                    "NA12878.minimac4.bcftools_stats.txt:md5,5af867d3d54f3cdbc9dfcb5e7e651449",
-                    "NA19401.minimac4.bcftools_stats.txt:md5,5b3b724bced2bed3b1c5f646cfaa9f92",
-                    "NA20359.minimac4.bcftools_stats.txt:md5,7b0580f0a386be26e33e724b18647d03",
+                    "NA12878.minimac4.bcftools_stats.txt:md5,4b80481afb586df15c3ff4763b9c9edb",
+                    "NA19401.minimac4.bcftools_stats.txt:md5,db175d841d6cecd23b36dba3fccae287",
+                    "NA20359.minimac4.bcftools_stats.txt:md5,081dc81a87e1d8409980c383b7bc071f",
                     "GRCh38.s.fa.gz.fai:md5,4f4e0ff133e7a05cb469e345f766ca8c",
                     "GRCh38.s.fa.gz.gzi:md5,09046d9646db2cc5c425f231ce4595d7",
                     "bcftools-stats-subtypes.txt:md5,a6ea6fbba2fab0d9899174bee8f9c68f",
@@ -190,10 +190,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-05T19:35:30.426605564",
+        "timestamp": "2026-11-13T12:23:14.123685935",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Check test_minimac4 - with map - with chunks": {
@@ -217,7 +217,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -337,9 +337,9 @@
                     "pipeline_info/nf_core_phaseimpute_software_mqc_versions.yml"
                 ],
                 "stable path": [
-                    "NA12878.minimac4.bcftools_stats.txt:md5,5af867d3d54f3cdbc9dfcb5e7e651449",
-                    "NA19401.minimac4.bcftools_stats.txt:md5,5b3b724bced2bed3b1c5f646cfaa9f92",
-                    "NA20359.minimac4.bcftools_stats.txt:md5,7b0580f0a386be26e33e724b18647d03",
+                    "NA12878.minimac4.bcftools_stats.txt:md5,4b80481afb586df15c3ff4763b9c9edb",
+                    "NA19401.minimac4.bcftools_stats.txt:md5,db175d841d6cecd23b36dba3fccae287",
+                    "NA20359.minimac4.bcftools_stats.txt:md5,081dc81a87e1d8409980c383b7bc071f",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -410,7 +410,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:53:01.365749098",
+        "timestamp": "2026-11-13T12:21:02.489907418",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"
@@ -437,7 +437,7 @@
                         "bcftools": "1.25"
                     },
                     "BCFTOOLS_STATS_TOOLS": {
-                        "bcftools": "1.23.1"
+                        "bcftools": "1.25"
                     },
                     "CUSTOM_GENETICMAPCONVERT": {
                         "r-base": "4.5.3",
@@ -557,9 +557,9 @@
                     "pipeline_info/nf_core_phaseimpute_software_mqc_versions.yml"
                 ],
                 "stable path": [
-                    "NA12878.minimac4.bcftools_stats.txt:md5,5af867d3d54f3cdbc9dfcb5e7e651449",
-                    "NA19401.minimac4.bcftools_stats.txt:md5,5b3b724bced2bed3b1c5f646cfaa9f92",
-                    "NA20359.minimac4.bcftools_stats.txt:md5,7b0580f0a386be26e33e724b18647d03",
+                    "NA12878.minimac4.bcftools_stats.txt:md5,4b80481afb586df15c3ff4763b9c9edb",
+                    "NA19401.minimac4.bcftools_stats.txt:md5,db175d841d6cecd23b36dba3fccae287",
+                    "NA20359.minimac4.bcftools_stats.txt:md5,081dc81a87e1d8409980c383b7bc071f",
                     "1000GP_chr21.glimpse.map:md5,eda05f6e81718e00e83085bb0b07e584",
                     "1000GP_chr21.minimac.map:md5,ab83755a9804d27b1086e48e2da64992",
                     "1000GP_chr21.plink.map:md5,57966816771960670e5149fa5c3cec60",
@@ -630,7 +630,7 @@
                 }
             }
         ],
-        "timestamp": "2026-11-11T13:55:04.988794287",
+        "timestamp": "2026-11-13T12:25:47.299556845",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"
