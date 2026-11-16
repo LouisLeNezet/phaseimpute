@@ -5,8 +5,8 @@
                 "ch_chunks": [
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -14,8 +14,8 @@
                     ],
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -45,33 +45,33 @@
                 "ch_input_target": [
                     [
                         {
+                            "batch": 0,
                             "id": "NA12878",
                             "tools": [
                                 
-                            ],
-                            "batch": 0
+                            ]
                         },
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA12878/NA12878.s.bam",
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA12878/NA12878.s.bam.bai"
                     ],
                     [
                         {
+                            "batch": 0,
                             "id": "NA19401",
                             "tools": [
                                 
-                            ],
-                            "batch": 0
+                            ]
                         },
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA19401/NA19401.s.bam",
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA19401/NA19401.s.bam.bai"
                     ],
                     [
                         {
+                            "batch": 0,
                             "id": "NA20359",
                             "tools": [
                                 
-                            ],
-                            "batch": 0
+                            ]
                         },
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA20359/NA20359.s.bam",
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/individuals/NA20359/NA20359.s.bam.bai"
@@ -93,8 +93,8 @@
                 "ch_map": [
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -102,8 +102,8 @@
                     ],
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -113,8 +113,8 @@
                 "ch_panel": [
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -125,8 +125,8 @@
                     ],
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -139,8 +139,8 @@
                 "ch_posfile": [
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -160,8 +160,8 @@
                     ],
                     [
                         {
-                            "panel_id": "None",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "None"
                         },
                         [
                             
@@ -198,10 +198,10 @@
                 ]
             }
         ],
-        "timestamp": "2026-09-25T14:08:48.632097627",
+        "timestamp": "2026-11-16T09:41:59.214743124",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     },
     "Should give a warning with missing files": {
@@ -210,15 +210,15 @@
                 "ch_chunks": [
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "1000GP"
                         },
                         "https://github.com/nf-core/test-datasets/raw/phaseimpute/hum_data/panel/chr21/1000GP.chr21_chunks.txt"
                     ],
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "1000GP"
                         },
                         "https://github.com/nf-core/test-datasets/raw/phaseimpute/hum_data/panel/chr22/1000GP.chr22_chunks.txt"
                     ]
@@ -274,8 +274,8 @@
                 "ch_map": [
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "1000GP"
                         },
                         [
                             
@@ -283,8 +283,8 @@
                     ],
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "1000GP"
                         },
                         [
                             
@@ -294,16 +294,16 @@
                 "ch_panel": [
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "1000GP"
                         },
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/panel/chr21/1000GP.chr21.s.norel.vcf.gz",
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/panel/chr21/1000GP.chr21.s.norel.vcf.gz.csi"
                     ],
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "1000GP"
                         },
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/panel/chr22/1000GP.chr22.s.norel.vcf.gz",
                         "https://raw.githubusercontent.com/nf-core/test-datasets/phaseimpute/hum_data/panel/chr22/1000GP.chr22.s.norel.vcf.gz.csi"
@@ -312,8 +312,8 @@
                 "ch_posfile": [
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr21"
+                            "chr": "chr21",
+                            "panel_id": "1000GP"
                         },
                         [
                             
@@ -333,8 +333,8 @@
                     ],
                     [
                         {
-                            "panel_id": "1000GP",
-                            "chr": "chr22"
+                            "chr": "chr22",
+                            "panel_id": "1000GP"
                         },
                         [
                             
@@ -371,10 +371,10 @@
                 ]
             }
         ],
-        "timestamp": "2026-09-25T14:08:33.521486575",
+        "timestamp": "2026-11-16T09:41:31.620863021",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     }
 }
