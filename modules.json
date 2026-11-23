@@ -81,12 +81,12 @@
                     },
                     "bcftools/view": {
                         "branch": "master",
-                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
+                        "git_sha": "b489eb2587cb508cc9eef65c53f04f7419b5f6d9",
                         "installed_by": ["modules", "vcf_impute_beagle5"]
                     },
                     "beagle5/beagle": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "9ef05a6153a7d0a0e56815190db8dbca3905ba63",
                         "installed_by": ["modules", "vcf_impute_beagle5"]
                     },
                     "custom/geneticmapconvert": {
@@ -116,7 +116,7 @@
                     },
                     "glimpse2/chunk": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "76c80b23c084f1ab185e0541b8844455f47e091d",
                         "installed_by": ["bam_vcf_impute_glimpse2", "modules", "vcf_phase_shapeit5"]
                     },
                     "glimpse2/concordance": {
@@ -138,12 +138,12 @@
                     },
                     "glimpse2/phase": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "76c80b23c084f1ab185e0541b8844455f47e091d",
                         "installed_by": ["bam_vcf_impute_glimpse2", "modules"]
                     },
                     "glimpse2/splitreference": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "76c80b23c084f1ab185e0541b8844455f47e091d",
                         "installed_by": ["bam_vcf_impute_glimpse2"]
                     },
                     "gunzip": {
@@ -223,7 +223,7 @@
                     },
                     "stitch": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "76c80b23c084f1ab185e0541b8844455f47e091d",
                         "installed_by": ["bam_impute_stitch", "modules"]
                     }
                 }
@@ -232,17 +232,17 @@
                 "nf-core": {
                     "bam_impute_quilt": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "bam_impute_quilt2": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "bam_impute_stitch": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "bam_subsampledepth_samtools": {
@@ -257,7 +257,7 @@
                     },
                     "bam_vcf_impute_glimpse2": {
                         "branch": "master",
-                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "utils_nextflow_pipeline": {
@@ -282,17 +282,17 @@
                     },
                     "vcf_impute_beagle5": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "vcf_impute_glimpse": {
                         "branch": "master",
-                        "git_sha": "60f2b1ddfd68488e0cf2283c5ce68f6c44ff1722",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "vcf_impute_minimac4": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "b5e7d87d5bdb7bdcba63fba0a00dc69f5d36176a",
                         "installed_by": ["subworkflows"]
                     },
                     "vcf_phase_shapeit5": {
