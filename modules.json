@@ -22,7 +22,7 @@
                     },
                     "bcftools/index": {
                         "branch": "master",
-                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
+                        "git_sha": "b489eb2587cb508cc9eef65c53f04f7419b5f6d9",
                         "installed_by": [
                             "bam_impute_quilt",
                             "bam_impute_quilt2",
@@ -101,17 +101,17 @@
                     },
                     "glimpse/chunk": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "60f2b1ddfd68488e0cf2283c5ce68f6c44ff1722",
                         "installed_by": ["modules", "vcf_impute_glimpse"]
                     },
                     "glimpse/ligate": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "60f2b1ddfd68488e0cf2283c5ce68f6c44ff1722",
                         "installed_by": ["modules", "vcf_impute_glimpse"]
                     },
                     "glimpse/phase": {
                         "branch": "master",
-                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
+                        "git_sha": "60f2b1ddfd68488e0cf2283c5ce68f6c44ff1722",
                         "installed_by": ["modules", "vcf_impute_glimpse"]
                     },
                     "glimpse2/chunk": {
@@ -262,17 +262,17 @@
                     },
                     "utils_nextflow_pipeline": {
                         "branch": "master",
-                        "git_sha": "1a545fcbd762911c21a64ced3dbef99b2b51ac75",
+                        "git_sha": "7b3452a23773f687ededb4befd037920e5a51341",
                         "installed_by": ["subworkflows"]
                     },
                     "utils_nfcore_pipeline": {
                         "branch": "master",
-                        "git_sha": "6ef220fd9252b42fb3c50348bbdbcb6246730686",
+                        "git_sha": "c87ca93172a37577c25034898e187b82265d72c8",
                         "installed_by": ["subworkflows"]
                     },
                     "utils_nfschema_plugin": {
                         "branch": "master",
-                        "git_sha": "a7b27fd25bfa8dcc07d299e88bd790585901a436",
+                        "git_sha": "63ae4862970211aa03d0b296b0360db469565082",
                         "installed_by": ["subworkflows"]
                     },
                     "vcf_gather_bcftools": {
@@ -287,7 +287,7 @@
                     },
                     "vcf_impute_glimpse": {
                         "branch": "master",
-                        "git_sha": "ed7a2286df416088793e62fa6a740d07974d0ff8",
+                        "git_sha": "60f2b1ddfd68488e0cf2283c5ce68f6c44ff1722",
                         "installed_by": ["subworkflows"]
                     },
                     "vcf_impute_minimac4": {
